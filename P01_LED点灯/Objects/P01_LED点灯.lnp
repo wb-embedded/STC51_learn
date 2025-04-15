@@ -1,0 +1,5 @@
+".\Objects\STARTUP.obj",
+".\Objects\main.obj" 
+TO ".\Objects\P01_LEDµãµÆ" 
+
+PRINT(".\Listings\P01_LEDµãµÆ.map")
