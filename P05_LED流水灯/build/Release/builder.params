@@ -1,0 +1,67 @@
+{
+    "name": "P05_LED流水灯",
+    "target": "Release",
+    "toolchain": "Keil_C51",
+    "toolchainLocation": "null",
+    "toolchainCfgFile": "c:\\Users\\Administrator\\.vscode\\extensions\\cl.eide-3.21.1\\res\\data\\models\\win32/8051.keil.model.json",
+    "buildMode": "normal|multhread",
+    "showRepathOnLog": true,
+    "threadNum": 12,
+    "rootDir": "e:\\嵌入式\\projects\\P05_LED流水灯",
+    "dumpPath": "build\\Release",
+    "outDir": "build\\Release",
+    "incDirs": [
+        "null/INC"
+    ],
+    "libDirs": [],
+    "defines": [
+        "__UVISION_VERSION=526"
+    ],
+    "sourceList": [
+        "src/main.c"
+    ],
+    "sourceParams": {},
+    "options": {
+        "version": 2,
+        "beforeBuildTasks": [],
+        "afterBuildTasks": [],
+        "global": {
+            "ram-mode": "SMALL",
+            "rom-mode": "LARGE"
+        },
+        "c/cpp-compiler": {
+            "optimization-type": "SPEED",
+            "optimization-level": "level-8",
+            "optimization": "8,SPEED"
+        },
+        "asm-compiler": {},
+        "linker": {
+            "remove-unused": true,
+            "output-format": "elf"
+        }
+    },
+    "env": {
+        "workspaceFolder": "e:\\嵌入式\\projects\\P05_LED流水灯",
+        "workspaceFolderBasename": "P05_LED流水灯",
+        "OutDir": "e:\\嵌入式\\projects\\P05_LED流水灯\\build\\Release",
+        "OutDirRoot": "build",
+        "OutDirBase": "build\\Release",
+        "ProjectName": "P05_LED流水灯",
+        "ConfigName": "Release",
+        "ProjectRoot": "e:\\嵌入式\\projects\\P05_LED流水灯",
+        "ExecutableName": "e:\\嵌入式\\projects\\P05_LED流水灯\\build\\Release\\P05_LED流水灯",
+        "ChipPackDir": "",
+        "ChipName": "",
+        "SYS_Platform": "win32",
+        "SYS_DirSep": "\\",
+        "SYS_DirSeparator": "\\",
+        "SYS_PathSep": ";",
+        "SYS_PathSeparator": ";",
+        "SYS_EOL": "\r\n",
+        "EIDE_BUILDER_DIR": "c:\\Users\\Administrator\\.vscode\\extensions\\cl.eide-3.21.1\\res\\tools\\win32\\unify_builder",
+        "EIDE_BINARIES_VER": "12.0.1",
+        "EIDE_MSYS": "C:\\Users\\Administrator\\.eide\\bin\\builder\\msys\\bin",
+        "ToolchainRoot": "null"
+    },
+    "sysPaths": []
+}
