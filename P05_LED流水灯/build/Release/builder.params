@@ -2,7 +2,7 @@
     "name": "P05_LED流水灯",
     "target": "Release",
     "toolchain": "Keil_C51",
-    "toolchainLocation": "null",
+    "toolchainLocation": "E:\\Program Files\\Keil_v5\\C51",
     "toolchainCfgFile": "c:\\Users\\Administrator\\.vscode\\extensions\\cl.eide-3.21.1\\res\\data\\models\\win32/8051.keil.model.json",
     "buildMode": "normal|multhread",
     "showRepathOnLog": true,
@@ -11,7 +11,7 @@
     "dumpPath": "build\\Release",
     "outDir": "build\\Release",
     "incDirs": [
-        "null/INC"
+        "../../../Program Files/Keil_v5/C51/INC"
     ],
     "libDirs": [],
     "defines": [
@@ -61,7 +61,7 @@
         "EIDE_BUILDER_DIR": "c:\\Users\\Administrator\\.vscode\\extensions\\cl.eide-3.21.1\\res\\tools\\win32\\unify_builder",
         "EIDE_BINARIES_VER": "12.0.1",
         "EIDE_MSYS": "C:\\Users\\Administrator\\.eide\\bin\\builder\\msys\\bin",
-        "ToolchainRoot": "null"
+        "ToolchainRoot": "E:\\Program Files\\Keil_v5\\C51"
     },
     "sysPaths": []
 }

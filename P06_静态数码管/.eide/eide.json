@@ -1,5 +1,5 @@
 {
-  "name": "P05_LED流水灯",
+  "name": "P06_静态数码管",
   "type": "C51",
   "dependenceList": [],
   "srcDirs": [
@@ -12,7 +12,7 @@
     "folders": []
   },
   "miscInfo": {
-    "uid": "3ce6005becf073276a0dbd61a70c92ca"
+    "uid": "fa87344f122f60d1c1e9796d9a02bd01"
   },
   "targets": {
     "Release": {
