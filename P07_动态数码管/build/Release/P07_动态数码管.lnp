@@ -1,0 +1,2 @@
+.\build\Release\.obj\src\main.o TO .\build\Release\P07_动态数码管
+PRINT(.\build\Release\P07_动态数码管.map) REMOVEUNUSED

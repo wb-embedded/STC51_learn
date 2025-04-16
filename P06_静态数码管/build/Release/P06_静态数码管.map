@@ -1,0 +1,117 @@
+LX51 LINKER/LOCATER V4.66.100.0                                                         04/16/2025  16:37:17  PAGE 1
+
+
+LX51 LINKER/LOCATER V4.66.100.0, INVOKED BY:
+E:\PROGRAM FILES\KEIL_V5\C51\BIN\LX51.EXE .\BUILD\RELEASE\.OBJ\SRC\MAIN.O TO .\BUILD\RELEASE\P06_静态数码管 PRINT (.\bui
+>> ld\Release\P06_静态数码管.map) REMOVEUNUSED
+
+
+CPU MODE:     8051 MODE
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+         COMMENT TYPE 0: C51 V9.60.7.0
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+
+
+ACTIVE MEMORY CLASSES OF MODULE:  .\BUILD\RELEASE\P06_静态数码管 (MAIN)
+
+BASE        START       END         USED      MEMORY CLASS
+==========================================================
+C:000000H   C:000000H   C:00FFFFH   0000BBH   CODE
+I:000000H   I:000000H   I:00007FH   000012H   DATA
+I:000000H   I:000000H   I:0000FFH   000001H   IDATA
+
+
+MEMORY MAP OF MODULE:  .\BUILD\RELEASE\P06_静态数码管 (MAIN)
+
+
+START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
+=========================================================================
+
+* * * * * * * * * * *   D A T A   M E M O R Y   * * * * * * * * * * * * *
+000000H   000007H   000008H   ---    AT..     DATA           "REG BANK 0"
+000008H   000011H   00000AH   BYTE   UNIT     DATA           ?DT?MAIN
+000012H   000012H   000001H   BYTE   UNIT     IDATA          ?STACK
+
+* * * * * * * * * * *   C O D E   M E M O R Y   * * * * * * * * * * * * *
+000000H   000002H   000003H   ---    OFFS..   CODE           ?CO??C_STARTUP?0
+000003H   00008EH   00008CH   BYTE   UNIT     CODE           ?C_C51STARTUP
+00008FH   0000A1H   000013H   BYTE   UNIT     CODE           ?PR?_DISPLAYSINGLE?MAIN
+0000A2H   0000AEH   00000DH   BYTE   UNIT     CODE           ?C_INITSEG
+0000AFH   0000BAH   00000CH   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
+
+* * * * * * * * *   R E M O V E D     S E G M E N T S   * * * * * * * *
+   *DEL*:           00000EH   BYTE   UNIT     CODE           ?PR?DELAY500MS?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\BUILD\RELEASE\P06_静态数码管 (MAIN)
+
+
+FUNCTION/MODULE              BIT_GROUP   DATA_GROUP 
+--> CALLED FUNCTION/MODULE  START  STOP  START  STOP
+====================================================
+?C_C51STARTUP               ----- -----  ----- -----
+  +--> MAIN/MAIN
+  +--> ?C_INITSEG
+
+MAIN/MAIN                   ----- -----  ----- -----
+  +--> _DISPLAYSINGLE/MAIN
+
+_DISPLAYSINGLE/MAIN         ----- -----  ----- -----
+
+?C_INITSEG                  ----- -----  ----- -----
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/16/2025  16:37:17  PAGE 2
+
+
+
+
+
+PUBLIC SYMBOLS OF MODULE:  .\BUILD\RELEASE\P06_静态数码管 (MAIN)
+
+
+      VALUE       CLASS    TYPE      PUBLIC SYMBOL NAME
+      =================================================
+      00000000H   NUMBER   ---       ?C?CODESEG
+      00000000H   NUMBER   ---       ?C?XDATASEG
+      0100004AH   CODE     ---       ?C_START
+      01000000H   CODE     ---       ?C_STARTUP
+      0100008FH   CODE     ---       _DisplaySingle
+*DEL*:00000000H   CODE     ---       Delay500ms
+      00000008H   DATA     ---       digtal_codes
+      010000AFH   CODE     ---       main
+
+
+
+SYMBOL TABLE OF MODULE:  .\BUILD\RELEASE\P06_静态数码管 (MAIN)
+
+      VALUE       REP       CLASS    TYPE      SYMBOL NAME
+      ====================================================
+      ---         MODULE    ---      ---       MAIN
+      00000008H   PUBLIC    DATA     ---       digtal_codes
+      010000AFH   PUBLIC    CODE     ---       main
+      0100008FH   PUBLIC    CODE     ---       _DisplaySingle
+      00000007H   SYMBOL    DATA     VOID      i
+      00000006H   SYMBOL    DATA     VOID      j
+      00000005H   SYMBOL    DATA     VOID      k
+
+      0100008FH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      010000AFH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       ?C_STARTUP
+      01000000H   PUBLIC    CODE     ---       ?C_STARTUP
+
+      ---         MODULE    ---      ---       ?C_INIT
+      0100004AH   PUBLIC    CODE     ---       ?C_START
+
+Program Size: data=19.0 xdata=0 const=0 code=187
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,157 @@
+LX51 LINKER/LOCATER V4.66.100.0                                                         04/16/2025  21:33:21  PAGE 1
+
+
+LX51 LINKER/LOCATER V4.66.100.0, INVOKED BY:
+E:\PROGRAM FILES\KEIL_V5\C51\BIN\LX51.EXE .\BUILD\RELEASE\.OBJ\SRC\MAIN.O TO .\BUILD\RELEASE\P07_��̬����� PRINT (.\bui
+>> ld\Release\P07_��̬�����.map) REMOVEUNUSED
+
+
+CPU MODE:     8051 MODE
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+         COMMENT TYPE 0: C51 V9.60.7.0
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C?ULDIV)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C?ULCMP)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+
+
+ACTIVE MEMORY CLASSES OF MODULE:  .\BUILD\RELEASE\P07_��̬����� (MAIN)
+
+BASE        START       END         USED      MEMORY CLASS
+==========================================================
+C:000000H   C:000000H   C:00FFFFH   0001DCH   CODE
+I:000000H   I:000000H   I:00007FH   00001AH   DATA
+I:000000H   I:000000H   I:0000FFH   000001H   IDATA
+
+
+MEMORY MAP OF MODULE:  .\BUILD\RELEASE\P07_��̬����� (MAIN)
+
+
+START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
+=========================================================================
+
+* * * * * * * * * * *   D A T A   M E M O R Y   * * * * * * * * * * * * *
+000000H   000007H   000008H   ---    AT..     DATA           "REG BANK 0"
+000008H   000019H   000012H   BYTE   UNIT     DATA           ?DT?MAIN
+00001AH   00001AH   000001H   BYTE   UNIT     IDATA          ?STACK
+
+* * * * * * * * * * *   C O D E   M E M O R Y   * * * * * * * * * * * * *
+000000H   000002H   000003H   ---    OFFS..   CODE           ?CO??C_STARTUP?0
+000003H   0000E1H   0000DFH   BYTE   UNIT     CODE           ?C?LIB_CODE
+0000E2H   00016DH   00008CH   BYTE   UNIT     CODE           ?C_C51STARTUP
+00016EH   00019DH   000030H   BYTE   UNIT     CODE           ?PR?_SETCACHE?MAIN
+00019EH   0001AFH   000012H   BYTE   UNIT     CODE           ?PR?FLUSHDIGTAL?MAIN
+0001B0H   0001C0H   000011H   BYTE   UNIT     CODE           ?PR?_DISPLAYSINGLE?MAIN
+0001C1H   0001CEH   00000EH   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
+0001CFH   0001DBH   00000DH   BYTE   UNIT     CODE           ?C_INITSEG
+
+* * * * * * * * *   R E M O V E D     S E G M E N T S   * * * * * * * *
+   *DEL*:           00007BH   BYTE   UNIT     CODE           ?PR?_SHOWDIGTALNUM?MAIN
+   *DEL*:           000006H   BYTE   UNIT     DATA           ?DT?_SHOWDIGTALNUM?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\BUILD\RELEASE\P07_��̬����� (MAIN)
+
+
+FUNCTION/MODULE              BIT_GROUP   DATA_GROUP 
+--> CALLED FUNCTION/MODULE  START  STOP  START  STOP
+====================================================
+?C_C51STARTUP               ----- -----  ----- -----
+  +--> MAIN/MAIN
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/16/2025  21:33:21  PAGE 2
+
+
+  +--> ?C_INITSEG
+
+MAIN/MAIN                   ----- -----  ----- -----
+  +--> _SETCACHE/MAIN
+  +--> FLUSHDIGTAL/MAIN
+
+_SETCACHE/MAIN              ----- -----  ----- -----
+
+FLUSHDIGTAL/MAIN            ----- -----  ----- -----
+  +--> _DISPLAYSINGLE/MAIN
+
+_DISPLAYSINGLE/MAIN         ----- -----  ----- -----
+
+?C_INITSEG                  ----- -----  ----- -----
+
+
+
+PUBLIC SYMBOLS OF MODULE:  .\BUILD\RELEASE\P07_��̬����� (MAIN)
+
+
+      VALUE       CLASS    TYPE      PUBLIC SYMBOL NAME
+      =================================================
+      00000000H   NUMBER   ---       ?C?CODESEG
+      010000D1H   CODE     ---       ?C?ULCMP
+      0100003FH   CODE     ---       ?C?ULDIV
+      00000000H   NUMBER   ---       ?C?XDATASEG
+      01000129H   CODE     ---       ?C_START
+      01000000H   CODE     ---       ?C_STARTUP
+      010001B0H   CODE     ---       _DisplaySingle
+      0100016EH   CODE     ---       _SetCache
+*DEL*:00000000H   CODE     ---       _ShowDigtalNum
+      00000008H   DATA     ---       buff
+      00000010H   DATA     ---       digtal_codes
+      0100019EH   CODE     ---       FlushDigtal
+      010001C1H   CODE     ---       main
+
+
+
+SYMBOL TABLE OF MODULE:  .\BUILD\RELEASE\P07_��̬����� (MAIN)
+
+      VALUE       REP       CLASS    TYPE      SYMBOL NAME
+      ====================================================
+      ---         MODULE    ---      ---       MAIN
+      00000010H   PUBLIC    DATA     ---       digtal_codes
+      00000008H   PUBLIC    DATA     ---       buff
+      010001C1H   PUBLIC    CODE     ---       main
+      0100019EH   PUBLIC    CODE     ---       FlushDigtal
+      0100016EH   PUBLIC    CODE     ---       _SetCache
+      010001B0H   PUBLIC    CODE     ---       _DisplaySingle
+
+      010001B0H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      0100016EH   BLOCK     CODE     ---       LVL=0
+      0100016EH   BLOCK     CODE     NEAR LAB  LVL=1
+      00000006H   SYMBOL    DATA     VOID      i
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      0100019EH   BLOCK     CODE     ---       LVL=0
+      0100019EH   BLOCK     CODE     NEAR LAB  LVL=1
+      00000006H   SYMBOL    DATA     VOID      i
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/16/2025  21:33:21  PAGE 3
+
+
+      010001C1H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       ?C_STARTUP
+      01000000H   PUBLIC    CODE     ---       ?C_STARTUP
+
+      ---         MODULE    ---      ---       ?C?ULDIV
+      0100003FH   PUBLIC    CODE     ---       ?C?ULDIV
+
+      ---         MODULE    ---      ---       ?C?ULCMP
+      010000D1H   PUBLIC    CODE     ---       ?C?ULCMP
+
+      ---         MODULE    ---      ---       ?C_INIT
+      01000129H   PUBLIC    CODE     ---       ?C_START
+
+Program Size: data=27.0 xdata=0 const=0 code=476
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

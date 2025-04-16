@@ -263,5 +263,335 @@ DIR为H，An为输入，Bn为输出
 
 ![image-20250415213221450](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20250415213221450.png)
 
-因为所使用数码管为共阴极数码管，所以当Dig为低电平，另一端至少有一个高电平时有显示![image-20250415213528306](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20250415213528306.png)
+因为所使用数码管为共阴极数码管，所以当Dig为低电平，另一端至少有一个高电平时有显示![image-20250415213528306](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20250415213528306.png)![image-20250415220106181](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20250415220106181.png)
+
+***注：***需要设置***P34***和***P36***的值，其中***P34***是LED使能端，高电平有效，***P36***是数码管使能端，低电平有效
+
+##### 程序如下
+
+```c
+#include "STC89C5XRC.H"
+#include <INTRINS.H>
+
+#define SMG_EN P36
+#define LED_EN P34
+
+void Delay500ms()    //@11.0592MHz
+{
+  unsigned char data i, j, k;
+  _nop_();
+  i = 4;
+  j = 129;
+  k = 119;
+  do
+  {
+​    do
+​    {
+​      while (--k);
+​    } while (--j);
+  } while (--i);
+}
+
+//数码管显示数组
+unsigned char digtal_codes[10] = {
+  0x3F,//0
+  0x06,//1
+  0x5B,//2
+  0x4F,//3
+  0x66,//4
+  0x6D,//5
+  0x7D,//6
+  0x07,//7
+  0x7F,//8
+  0x6F//9
+};
+
+void DisplaySingle(unsigned char n, unsigned char num)
+{
+  //片选
+  //将P13，P14，P15清零
+  P1 &= 0xC7;
+  //设置P13，P14，P15的值
+  P1 |= (n << 3);
+  // P13 = 0;
+  // P14 = 0;
+  // P15 = 1;
+  /*
+  0  ABCDEF  	0011 1111  	0x3F
+  1  BC			0000 0110	0x06
+  2  ABDEG  	0101 1011	0x5B
+  3  ABCDG  	0100 1111	0x4F
+  4  BCFG   	0110 0110	0x66
+  5  ABDEG  	0110 1101	0x6D
+  6  ACDEFG		0111 1101 	0x7D
+  7  ABC   		0000 0111	0x07
+  8  ABCDEFG 	0111 1111  	0x7F
+  9  ABCDFG  	0110 1111  	0x6F
+  */
+  
+  //段选
+  P0 = digtal_codes[num];
+}
+
+void main()
+{
+  SMG_EN = 0; //SMG_EN 低电平有效
+  LED_EN = 0; //LED_EN 高电平有效
+  
+  DisplaySingle(0,0);//第0个数码管显示0
+
+  while(1)
+  {}
+}
+```
+
+
+
+
+
+## Chapter 7 动态数码管显示
+
+```c
+#include "STC89C5XRC.H"
+#include <INTRINS.H>
+
+#define SMG_EN P36
+#define LED_EN P34
+
+void Delay500ms()    //@11.0592MHz
+{
+  unsigned char data i, j, k;
+  _nop_();
+  i = 4;
+  j = 129;
+  k = 119;
+  do
+  {
+    do
+    {
+      while (--k);
+    } while (--j);
+  } while (--i);
+}
+
+//数码管显示数组
+unsigned char digtal_codes[10] = {
+  0x3F,//0
+  0x06,//1
+  0x5B,//2
+  0x4F,//3
+  0x66,//4
+  0x6D,//5
+  0x7D,//6
+  0x07,//7
+  0x7F,//8
+  0x6F//9
+};
+
+void DisplaySingle(unsigned char n, unsigned char num)
+{
+  //片选
+  //将P13，P14，P15清零
+  P1 &= 0xC7;
+  //设置P13，P14，P15的值
+  P1 |= (n << 3);
+  // P13 = 0;
+  // P14 = 0;
+  // P15 = 1;
+  /*
+  0  ABCDEF  	0011 1111  	0x3F
+  1  BC			0000 0110	0x06
+  2  ABDEG  	0101 1011	0x5B
+  3  ABCDG  	0100 1111	0x4F
+  4  BCFG   	0110 0110	0x66
+  5  ABDEG  	0110 1101	0x6D
+  6  ACDEFG		0111 1101 	0x7D
+  7  ABC   		0000 0111	0x07
+  8  ABCDEFG 	0111 1111  	0x7F
+  9  ABCDFG  	0110 1111  	0x6F
+  */
+
+  //段选
+  P0 = digtal_codes[num];
+}
+
+void main()
+{
+  unsigned char i = 3;
+  SMG_EN = 0; //SMG_EN 低电平有效
+  LED_EN = 0; //LED_EN 高电平有效
+  while(1)
+  {
+   //关闭数码管，防止上一次的影响
+   //显示12345
+   P0 = 0x00;
+   if(i > 7)
+​    i = 3;
+   DisplaySingle(i, i - 2);
+   i++;
+  }
+}
+```
+
+#### 随意显示数字
+
+```c
+#include "STC89C5XRC.H"
+#define SMG_EN P36
+#define LED_EN P34
+//数码管显示数组
+unsigned char digtal_codes[10] = {
+ 0x3F,//0
+ 0x06,//1
+ 0x5B,//2
+ 0x4F,//3
+ 0x66,//4
+ 0x6D,//5
+ 0x7D,//6
+ 0x07,//7
+ 0x7F,//8
+ 0x6F//9
+};
+
+void DisplaySingle(unsigned char n, unsigned char num)
+{
+ //片选
+ //将P13，P14，P15清零
+ P1 &= 0xC7;
+ //设置P13，P14，P15的值
+ P1 |= (n << 3);
+ /*
+ 0  ABCDEF  	0011 1111  0x3F
+ 1  BC			0000 0110  0x06
+ 2  ABDEG   	0101 1011  0x5B
+ 3  ABCDG   	0100 1111  0x4F
+ 4  BCFG   		0110 0110  0x66
+ 5  ABDEG   	0110 1101  0x6D
+ 6  ACDEFG  	0111 1101  0x7D
+ 7  ABC    		0000 0111  0x07
+ 8  ABCDEFG  	0111 1111  0x7F
+ 9  ABCDFG  	0110 1111  0x6F
+ */
+
+ //段选
+ P0 = digtal_codes[num];
+}
+
+void ShowDigtalNum(unsigned long num)
+{
+ unsigned char i = 7, j;
+ while(num != 0)
+ {
+  j = num % 10;
+  DisplaySingle(i, j);
+  i--;
+  num /= 10;
+ }
+}
+
+void main()
+{
+  SMG_EN = 0; //SMG_EN 低电平有效
+  LED_EN = 0; //LED_EN 高电平有效
+  while(1)
+  {
+   ShowDigtalNum(12345678);
+  }
+}
+```
+
+#### 进阶版
+
+```c
+#include "STC89C5XRC.H"
+#define SMG_EN P36
+#define LED_EN P34
+//数码管显示数组
+unsigned char digtal_codes[10] = {
+ 0x3F,//0
+ 0x06,//1
+ 0x5B,//2
+ 0x4F,//3
+ 0x66,//4
+ 0x6D,//5
+ 0x7D,//6
+ 0x07,//7
+ 0x7F,//8
+ 0x6F//9
+};
+
+unsigned char buff[8];
+
+void DisplaySingle(unsigned char n, unsigned char num)
+{
+ P0 = 0;
+ //片选
+ //将P13，P14，P15清零
+ P1 &= 0xC7;
+ //设置P13，P14，P15的值
+ P1 |= (n << 3);
+ 
+ //段选
+ P0 = num;
+}
+
+void ShowDigtalNum(unsigned long num)
+{
+ unsigned char i = 7, j;
+ if(num == 0)
+ {
+  DisplaySingle(i, digtal_codes[num]);
+  return;
+ }
+ while(num != 0)
+ {
+  j = num % 10;
+  DisplaySingle(i, digtal_codes[j]);
+  i--;
+  num /= 10;
+ }
+}
+
+void SetCache(unsigned char num)
+{
+ unsigned char i;
+ for(i = 0; i < 8; i++)
+ {
+  buff[i] = 0x00;
+ }
+ if(num == 0)
+ {
+  buff[7] = digtal_codes[0];
+  return;
+ }
+ i = 7;
+ while(num != 0)
+ {
+  buff[i] = digtal_codes[num % 10];
+  num /= 10;
+  i--;
+ }
+}
+
+void FlushDigtal()
+{
+ unsigned char i;
+ for(i = 0; i < 8; i++)
+ {
+  DisplaySingle(i, buff[i]);
+ }
+}
+
+void main()
+{
+  // unsigned char i = 3;
+  SMG_EN = 0; //SMG_EN 低电平有效
+  LED_EN = 0; //LED_EN 高电平有效
+  SetCache(100);
+  while(1)
+  {
+   FlushDigtal();
+  }
+}
+```
 

@@ -1,0 +1,280 @@
+[2025-04-16 14:34:47]	[done]
+	build successfully !
+
+[2025-04-16 14:36:39]	[done]
+	build successfully !
+
+[2025-04-16 14:36:54]	[done]
+	build successfully !
+
+[2025-04-16 15:45:44]	[done]
+	build successfully !
+
+[2025-04-16 15:46:17]	[done]
+	build successfully !
+
+[2025-04-16 15:47:28]	[done]
+	build successfully !
+
+[2025-04-16 15:48:09]	[done]
+	build successfully !
+
+[2025-04-16 15:49:32]	[done]
+	build successfully !
+
+[2025-04-16 15:51:08]	[done]
+	build successfully !
+
+[2025-04-16 15:51:30]	[done]
+	build successfully !
+
+[2025-04-16 15:51:50]	[done]
+	build successfully !
+
+[2025-04-16 15:55:04]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 71 OF .\src\main.c: syntax error near 'int', expected 'sizeof'
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C141 IN LINE 71 OF .\src\main.c: syntax error near ')', expected ';'
+*** ERROR C141 IN LINE 73 OF .\src\main.c: syntax error near 'int', expected 'sizeof'
+*** ERROR C202 IN LINE 73 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C202 IN LINE 73 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C141 IN LINE 73 OF .\src\main.c: syntax error near ')', expected ';'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  9 ERROR(S)
+
+[2025-04-16 15:55:42]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 71 OF .\src\main.c: syntax error near 'unsigned', expected 'sizeof'
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C141 IN LINE 71 OF .\src\main.c: syntax error near ')', expected ';'
+*** ERROR C141 IN LINE 73 OF .\src\main.c: syntax error near 'int', expected 'sizeof'
+*** ERROR C202 IN LINE 73 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C202 IN LINE 73 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C141 IN LINE 73 OF .\src\main.c: syntax error near ')', expected ';'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  9 ERROR(S)
+
+[2025-04-16 15:56:39]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 71 OF .\src\main.c: syntax error near 'int', expected 'sizeof'
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C141 IN LINE 71 OF .\src\main.c: syntax error near ')', expected ';'
+*** ERROR C141 IN LINE 73 OF .\src\main.c: syntax error near 'int', expected 'sizeof'
+*** ERROR C202 IN LINE 73 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C202 IN LINE 73 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C141 IN LINE 73 OF .\src\main.c: syntax error near ')', expected ';'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  9 ERROR(S)
+
+[2025-04-16 15:57:18]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 70 OF .\src\main.c: syntax error near 'int', expected '__asm'
+*** ERROR C202 IN LINE 70 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C141 IN LINE 71 OF .\src\main.c: syntax error near 'int', expected '__asm'
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C202 IN LINE 73 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 75 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C202 IN LINE 77 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  7 ERROR(S)
+
+[2025-04-16 15:58:25]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 70 OF .\src\main.c: syntax error near 'unsigned', expected '__asm'
+*** ERROR C202 IN LINE 70 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 72 OF .\src\main.c: 'i': undefined identifier
+*** ERROR C202 IN LINE 74 OF .\src\main.c: 'j': undefined identifier
+*** ERROR C202 IN LINE 76 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  5 ERROR(S)
+
+[2025-04-16 15:59:17]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 70 OF .\src\main.c: syntax error near 'unsigned', expected '__asm'
+*** ERROR C202 IN LINE 70 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2025-04-16 16:00:24]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 70 OF .\src\main.c: syntax error near 'unsigned', expected '__asm'
+*** ERROR C202 IN LINE 70 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2025-04-16 16:00:37]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 70 OF .\src\main.c: syntax error near 'unsigned', expected '__asm'
+*** ERROR C202 IN LINE 70 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2025-04-16 16:00:50]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 70 OF .\src\main.c: syntax error near 'unsigned', expected '__asm'
+*** ERROR C202 IN LINE 70 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2025-04-16 16:00:59]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 70 OF .\src\main.c: syntax error near 'int', expected '__asm'
+*** ERROR C202 IN LINE 70 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2025-04-16 16:01:06]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 70 OF .\src\main.c: syntax error near 'int', expected '__asm'
+*** ERROR C202 IN LINE 70 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2025-04-16 16:01:20]	[done]
+	build successfully !
+
+[2025-04-16 16:01:29]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 71 OF .\src\main.c: syntax error near 'int', expected '__asm'
+*** ERROR C202 IN LINE 71 OF .\src\main.c: 'i': undefined identifier
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+[2025-04-16 16:02:22]	[done]
+	build successfully !
+
+[2025-04-16 16:02:50]	[done]
+	build successfully !
+
+[2025-04-16 16:03:43]	[done]
+	build successfully !
+
+[2025-04-16 16:04:37]	[done]
+	build successfully !
+
+[2025-04-16 16:06:10]	[done]
+	build successfully !
+
+[2025-04-16 16:06:55]	[done]
+	build successfully !
+
+[2025-04-16 16:08:02]	[done]
+	build successfully !
+
+[2025-04-16 16:31:44]	[done]
+	build successfully !
+
+[2025-04-16 16:32:35]	[done]
+	build successfully !
+
+[2025-04-16 16:32:41]	[done]
+	build successfully !
+
+[2025-04-16 16:33:47]	[done]
+	build successfully !
+
+[2025-04-16 16:33:56]	[done]
+	build successfully !
+
+[2025-04-16 16:36:02]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 16 OF .\src\main.c: syntax error near '?', expected 'hdata'
+*** ERROR C141 IN LINE 17 OF .\src\main.c: syntax error near '?', expected '__asm'
+*** ERROR C141 IN LINE 19 OF .\src\main.c: syntax error near '?', expected '__asm'
+*** ERROR C141 IN LINE 20 OF .\src\main.c: syntax error near 'while', expected 'hdata'
+*** ERROR C141 IN LINE 20 OF .\src\main.c: syntax error near '--', expected 'hdata'
+*** ERROR C129 IN LINE 20 OF .\src\main.c: missing ';' before ')'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  6 ERROR(S)
+
+[2025-04-16 16:36:18]	compilation failed at : "e:\嵌入式\projects\P06_静态数码管\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 16 OF .\src\main.c: syntax error near '?', expected 'hdata'
+*** ERROR C141 IN LINE 17 OF .\src\main.c: syntax error near '?', expected '__asm'
+*** ERROR C141 IN LINE 19 OF .\src\main.c: syntax error near '?', expected '__asm'
+*** ERROR C141 IN LINE 20 OF .\src\main.c: syntax error near 'while', expected 'hdata'
+*** ERROR C141 IN LINE 20 OF .\src\main.c: syntax error near '--', expected 'hdata'
+*** ERROR C129 IN LINE 20 OF .\src\main.c: missing ';' before ')'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  6 ERROR(S)
+
+[2025-04-16 16:37:17]	[done]
+	build successfully !
+

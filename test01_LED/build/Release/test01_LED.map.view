@@ -1,0 +1,3 @@
+tool: KEIL_C51
+fileName: test01_LED.map
+elfName: test01_LED
