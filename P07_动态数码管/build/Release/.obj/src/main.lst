@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -58,11 +58,11 @@ line level    source
   47   2        }
   48   1      }
   49          
-  50          void SetCache(unsigned char num)
+  50          void SetCache(unsigned long num)
   51          {
   52   1        unsigned char i;
   53   1        for(i = 0; i < 8; i++)
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 2   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 2   
 
   54   1        {
   55   2          buff[i] = 0x00;
@@ -95,14 +95,13 @@ line level    source
   82   1          // unsigned char i = 3;
   83   1          SMG_EN = 0; //SMG_EN 低电平有效
   84   1          LED_EN = 0; //LED_EN 高电平有效
-  85   1          SetCache(100);
+  85   1          SetCache(12345);
   86   1          while(1)
   87   1          {
-  88   2            // ShowDigtalNum(100);
-  89   2            FlushDigtal();
-  90   2          }
-  91   1      }
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 3   
+  88   2            FlushDigtal();
+  89   2          }
+  90   1      }
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 3   
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -166,7 +165,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 41
 002A E4                CLR     A
 002B FF                MOV     R7,A
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 4   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 4   
 
 002C FE                MOV     R6,A
 002D FD                MOV     R5,A
@@ -226,64 +225,109 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
              ; FUNCTION _SetCache (BEGIN)
                                            ; SOURCE LINE # 50
-;---- Variable 'num' assigned to Register 'R7' ----
+0000 8F00        R     MOV     num+03H,R7
+0002 8E00        R     MOV     num+02H,R6
+0004 8D00        R     MOV     num+01H,R5
+0006 8C00        R     MOV     num,R4
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 5   
+
                                            ; SOURCE LINE # 51
                                            ; SOURCE LINE # 53
-;---- Variable 'i' assigned to Register 'R6' ----
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 5   
-
-0000         ?C0006:
+0008 E4                CLR     A
+0009 F500        R     MOV     i,A
+000B         ?C0006:
                                            ; SOURCE LINE # 54
                                            ; SOURCE LINE # 55
-0000 7E08              MOV     R6,#08H
-0002 7800        R     MOV     R0,#LOW buff
-0004 E4                CLR     A
-0005         ?C0020:
-0005 F6                MOV     @R0,A
-0006 08                INC     R0
-0007 DEFC              DJNZ    R6,?C0020
+000B 7400        R     MOV     A,#LOW buff
+000D 2500        R     ADD     A,i
+000F F8                MOV     R0,A
+0010 E4                CLR     A
+0011 F6                MOV     @R0,A
                                            ; SOURCE LINE # 56
-0009         ?C0007:
+0012 0500        R     INC     i
+0014 E500        R     MOV     A,i
+0016 B408F2            CJNE    A,#08H,?C0006
+0019         ?C0007:
                                            ; SOURCE LINE # 57
-0009 EF                MOV     A,R7
-000A 7004              JNZ     ?C0009
+0019 E4                CLR     A
+001A FF                MOV     R7,A
+001B FE                MOV     R6,A
+001C FD                MOV     R5,A
+001D FC                MOV     R4,A
+001E AB00        R     MOV     R3,num+03H
+0020 AA00        R     MOV     R2,num+02H
+0022 A900        R     MOV     R1,num+01H
+0024 A800        R     MOV     R0,num
+0026 C3                CLR     C
+0027 120000      E     LCALL   ?C?ULCMP
+002A 7004              JNZ     ?C0009
                                            ; SOURCE LINE # 58
                                            ; SOURCE LINE # 59
-000C 850000      R     MOV     buff+07H,digtal_codes
-000F 22                RET     
+002C 850000      R     MOV     buff+07H,digtal_codes
+002F 22                RET     
                                            ; SOURCE LINE # 61
-0010         ?C0009:
+0030         ?C0009:
                                            ; SOURCE LINE # 62
-0010 7E07              MOV     R6,#07H
-0012         ?C0011:
+0030 750007      R     MOV     i,#07H
+0033         ?C0011:
                                            ; SOURCE LINE # 63
-0012 EF                MOV     A,R7
-0013 601A              JZ      ?C0010
+0033 E4                CLR     A
+0034 FF                MOV     R7,A
+0035 FE                MOV     R6,A
+0036 FD                MOV     R5,A
+0037 FC                MOV     R4,A
+0038 AB00        R     MOV     R3,num+03H
+003A AA00        R     MOV     R2,num+02H
+003C A900        R     MOV     R1,num+01H
+003E A800        R     MOV     R0,num
+0040 C3                CLR     C
+0041 120000      E     LCALL   ?C?ULCMP
+0044 603B              JZ      ?C0010
                                            ; SOURCE LINE # 64
                                            ; SOURCE LINE # 65
-0015 75F00A            MOV     B,#0AH
-0018 84                DIV     AB
-0019 7400        R     MOV     A,#LOW digtal_codes
-001B 25F0              ADD     A,B
-001D F8                MOV     R0,A
-001E E6                MOV     A,@R0
-001F FD                MOV     R5,A
-0020 7400        R     MOV     A,#LOW buff
-0022 2E                ADD     A,R6
-0023 F8                MOV     R0,A
-0024 A605              MOV     @R0,AR5
+0046 E4                CLR     A
+0047 7B0A              MOV     R3,#0AH
+0049 FA                MOV     R2,A
+004A F9                MOV     R1,A
+004B F8                MOV     R0,A
+004C AF00        R     MOV     R7,num+03H
+004E AE00        R     MOV     R6,num+02H
+0050 AD00        R     MOV     R5,num+01H
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 6   
+
+0052 AC00        R     MOV     R4,num
+0054 120000      E     LCALL   ?C?ULDIV
+0057 7400        R     MOV     A,#LOW digtal_codes
+0059 2B                ADD     A,R3
+005A F8                MOV     R0,A
+005B E6                MOV     A,@R0
+005C FF                MOV     R7,A
+005D 7400        R     MOV     A,#LOW buff
+005F 2500        R     ADD     A,i
+0061 F8                MOV     R0,A
+0062 A607              MOV     @R0,AR7
                                            ; SOURCE LINE # 66
-0026 EF                MOV     A,R7
-0027 75F00A            MOV     B,#0AH
-002A 84                DIV     AB
-002B FF                MOV     R7,A
+0064 AF00        R     MOV     R7,num+03H
+0066 AE00        R     MOV     R6,num+02H
+0068 AD00        R     MOV     R5,num+01H
+006A AC00        R     MOV     R4,num
+006C E4                CLR     A
+006D 7B0A              MOV     R3,#0AH
+006F FA                MOV     R2,A
+0070 F9                MOV     R1,A
+0071 F8                MOV     R0,A
+0072 120000      E     LCALL   ?C?ULDIV
+0075 8F00        R     MOV     num+03H,R7
+0077 8E00        R     MOV     num+02H,R6
+0079 8D00        R     MOV     num+01H,R5
+007B 8C00        R     MOV     num,R4
                                            ; SOURCE LINE # 67
-002C 1E                DEC     R6
+007D 1500        R     DEC     i
                                            ; SOURCE LINE # 68
-002D 80E3              SJMP    ?C0011
+007F 80B2              SJMP    ?C0011
                                            ; SOURCE LINE # 69
-002F         ?C0010:
-002F 22                RET     
+0081         ?C0010:
+0081 22                RET     
              ; FUNCTION _SetCache (END)
 
              ; FUNCTION FlushDigtal (BEGIN)
@@ -294,8 +338,6 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0000 E4                CLR     A
 0001 FE                MOV     R6,A
 0002         ?C0013:
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 6   
-
                                            ; SOURCE LINE # 75
                                            ; SOURCE LINE # 76
 0002 AF06              MOV     R7,AR6
@@ -315,24 +357,29 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
              ; FUNCTION main (BEGIN)
                                            ; SOURCE LINE # 80
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 7   
+
                                            ; SOURCE LINE # 81
                                            ; SOURCE LINE # 83
 0000 C2B6              CLR     P36
                                            ; SOURCE LINE # 84
 0002 C2B4              CLR     P34
                                            ; SOURCE LINE # 85
-0004 7F64              MOV     R7,#064H
-0006 120000      R     LCALL   _SetCache
-0009         ?C0017:
+0004 7F39              MOV     R7,#039H
+0006 7E30              MOV     R6,#030H
+0008 7D00              MOV     R5,#00H
+000A 7C00              MOV     R4,#00H
+000C 120000      R     LCALL   _SetCache
+000F         ?C0017:
                                            ; SOURCE LINE # 86
                                            ; SOURCE LINE # 87
+                                           ; SOURCE LINE # 88
+000F 120000      R     LCALL   FlushDigtal
                                            ; SOURCE LINE # 89
-0009 120000      R     LCALL   FlushDigtal
-                                           ; SOURCE LINE # 90
-000C 80FB              SJMP    ?C0017
+0012 80FB              SJMP    ?C0017
              ; FUNCTION main (END)
 
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 7   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 8   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -347,8 +394,8 @@ T0 . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B4H  1
 AC . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D6H  1
 P4 . . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E8H  1
 _SetCache. . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
-  num. . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
-  i. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0006H  1
+  num. . . . . . . . . . . . . . . . .  AUTO     DATA   U_LONG   0000H  4
+  i. . . . . . . . . . . . . . . . . .  AUTO     DATA   U_CHAR   0004H  1
 T1 . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B5H  1
 ISP_TRIG . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E6H  1
 T2 . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0090H  1
@@ -395,7 +442,7 @@ P30. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B0H  1
 P21. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A1H  1
 P12. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0092H  1
 P03. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0083H  1
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 8   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 9   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -458,7 +505,7 @@ TB8. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009BH  1
 EX1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AAH  1
 IT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008AH  1
 TH2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CDH  1
-C51 COMPILER V9.60.7.0   MAIN                                                              04/16/2025 21:33:29 PAGE 9   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/17/2025 14:13:23 PAGE 10  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -505,11 +552,11 @@ PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    220    ----
+   CODE SIZE        =    308    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =     18       6
+   DATA SIZE        =     18      11
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
    EDATA SIZE       =   ----    ----

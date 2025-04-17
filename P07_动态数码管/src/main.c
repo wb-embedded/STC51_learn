@@ -47,7 +47,7 @@ void ShowDigtalNum(unsigned long num)
   }
 }
 
-void SetCache(unsigned char num)
+void SetCache(unsigned long num)
 {
   unsigned char i;
   for(i = 0; i < 8; i++)
@@ -82,10 +82,9 @@ void main()
     // unsigned char i = 3;
     SMG_EN = 0; //SMG_EN 低电平有效
     LED_EN = 0; //LED_EN 高电平有效
-    SetCache(100);
+    SetCache(12345);
     while(1)
     {
-      // ShowDigtalNum(100);
       FlushDigtal();
     }
 }
