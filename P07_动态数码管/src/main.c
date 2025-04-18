@@ -1,4 +1,4 @@
-#include "STC89C5XRC.H"
+#include <STC89C5XRC.H>
 #define SMG_EN P36
 #define LED_EN P34
 

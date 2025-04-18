@@ -1,1 +1,2 @@
+.\build\Release\.obj\src\main.o TO .\build\Release\P05_LED流水灯
 PRINT(.\build\Release\P05_LED流水灯.map) REMOVEUNUSED

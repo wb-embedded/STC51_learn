@@ -1,7 +1,7 @@
 #ifndef __INT_DIGTAL_H__
 #define __INT_DIGTAL_H__
 
-#include "../STC89C5xRC.H"
+#include "STC89C5xRC.H"
 
 #define SMG_EN P36
 #define LED_EN P34

@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              04/15/2025 20:33:42 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/18/2025 16:57:58 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -62,7 +62,7 @@ line level    source
   51   2                  j = 0;
   52   2              if(i == 0x7F)
   53   2                  j = 1;
-C51 COMPILER V9.60.7.0   MAIN                                                              04/15/2025 20:33:42 PAGE 2   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/18/2025 16:57:58 PAGE 2   
 
   54   2              P0 = i;
   55   2              if(j == 0)
@@ -76,7 +76,7 @@ line level    source
   63   2              Delay500ms();
   64   2          }
   65   1      }
-C51 COMPILER V9.60.7.0   MAIN                                                              04/15/2025 20:33:42 PAGE 3   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/18/2025 16:57:58 PAGE 3   
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -140,7 +140,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 57
 0013 EC                MOV     A,R4
 0014 25E0              ADD     A,ACC
-C51 COMPILER V9.60.7.0   MAIN                                                              04/15/2025 20:33:42 PAGE 4   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/18/2025 16:57:58 PAGE 4   
 
 0016 04                INC     A
 0017 FC                MOV     R4,A
@@ -164,7 +164,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0026 80DC              SJMP    ?C0010
              ; FUNCTION main (END)
 
-C51 COMPILER V9.60.7.0   MAIN                                                              04/15/2025 20:33:42 PAGE 5   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/18/2025 16:57:58 PAGE 5   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -227,7 +227,7 @@ P22. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A2H  1
 P13. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0093H  1
 P04. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0084H  1
 P40. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00E8H  1
-C51 COMPILER V9.60.7.0   MAIN                                                              04/15/2025 20:33:42 PAGE 6   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/18/2025 16:57:58 PAGE 6   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -290,7 +290,7 @@ SM2. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009DH  1
 TL2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CCH  1
 PT0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B9H  1
 PT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BBH  1
-C51 COMPILER V9.60.7.0   MAIN                                                              04/15/2025 20:33:42 PAGE 7   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/18/2025 16:57:58 PAGE 7   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====

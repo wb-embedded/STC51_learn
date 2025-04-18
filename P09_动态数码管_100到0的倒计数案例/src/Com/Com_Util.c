@@ -1,5 +1,4 @@
 #include "Com_Util.h"
-#include <INTRINS.H>
 
 void Delay1ms()		//@11.0592MHz
 {

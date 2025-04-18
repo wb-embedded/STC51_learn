@@ -1,4 +1,4 @@
-LX51 LINKER/LOCATER V4.66.100.0                                                         04/15/2025  20:31:48  PAGE 1
+LX51 LINKER/LOCATER V4.66.100.0                                                         04/18/2025  16:57:58  PAGE 1
 
 
 LX51 LINKER/LOCATER V4.66.100.0, INVOKED BY:
@@ -21,7 +21,7 @@ ACTIVE MEMORY CLASSES OF MODULE:  .\BUILD\RELEASE\TEST01_LED (MAIN)
 
 BASE        START       END         USED      MEMORY CLASS
 ==========================================================
-C:000000H   C:000000H   C:00FFFFH   000046H   CODE
+C:000000H   C:000000H   C:00FFFFH   000045H   CODE
 I:000000H   I:000000H   I:0000FFH   000001H   IDATA
 I:000000H   I:000000H   I:00007FH   000008H   DATA
 
@@ -39,8 +39,8 @@ START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
 * * * * * * * * * * *   C O D E   M E M O R Y   * * * * * * * * * * * * *
 000000H   000002H   000003H   ---    OFFS..   CODE           ?CO??C_STARTUP?0
 000003H   00002AH   000028H   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
-00002BH   000039H   00000FH   BYTE   UNIT     CODE           ?PR?DELAY500MS?MAIN
-00003AH   000045H   00000CH   BYTE   UNIT     CODE           ?C_C51STARTUP
+00002BH   000038H   00000EH   BYTE   UNIT     CODE           ?PR?DELAY500MS?MAIN
+000039H   000044H   00000CH   BYTE   UNIT     CODE           ?C_C51STARTUP
 
 
 
@@ -67,7 +67,7 @@ PUBLIC SYMBOLS OF MODULE:  .\BUILD\RELEASE\TEST01_LED (MAIN)
       =================================================
       00000000H   NUMBER   ---       ?C?CODESEG
       00000000H   NUMBER   ---       ?C?XDATASEG
-LX51 LINKER/LOCATER V4.66.100.0                                                       04/15/2025  20:31:48  PAGE 2
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/18/2025  16:57:58  PAGE 2
 
 
       01000003H   CODE     ---       ?C_START
@@ -103,5 +103,5 @@ SYMBOL TABLE OF MODULE:  .\BUILD\RELEASE\TEST01_LED (MAIN)
       ---         MODULE    ---      ---       ?C_STARTUP
       01000000H   PUBLIC    CODE     ---       ?C_STARTUP
 
-Program Size: data=9.0 xdata=0 const=0 code=70
+Program Size: data=9.0 xdata=0 const=0 code=69
 LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

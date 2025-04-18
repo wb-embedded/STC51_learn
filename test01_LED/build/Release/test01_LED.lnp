@@ -1,2 +1,1 @@
-.\build\Release\.obj\src\main.o TO .\build\Release\test01_LED
 PRINT(.\build\Release\test01_LED.map) REMOVEUNUSED

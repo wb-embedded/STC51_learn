@@ -11,7 +11,8 @@
     "dumpPath": "build\\Release",
     "outDir": "build\\Release",
     "incDirs": [
-        "../../../Program Files/Keil_v5/C51/INC"
+        "../../../Program Files/Keil_v5/C51/INC",
+        "src"
     ],
     "libDirs": [],
     "defines": [

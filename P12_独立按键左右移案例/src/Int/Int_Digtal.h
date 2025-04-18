@@ -1,7 +1,7 @@
 #ifndef __INT_DIGTAL_H__
 #define __INT_DIGTAL_H__
 
-#include "../STC89C5xRC.H"
+#include "STC89C5xRC.H"
 
 #define SMG_EN P36
 #define LED_EN P34
@@ -24,6 +24,6 @@ static unsigned char s_digtal_codes[10] = {
 static void Int_Digtal_DisplaySingle(unsigned char, unsigned char);
 void Int_Digtal_SetCache(unsigned long num);
 void Int_Digtal_FlushDigtal();
-void Int_Digtal_SetCacheByBin(unsigned char* str);
+void Int_Digtal_SetCacheByBin(unsigned char* p_data);
 
 #endif

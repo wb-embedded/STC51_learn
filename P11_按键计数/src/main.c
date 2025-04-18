@@ -1,5 +1,5 @@
-#include "./Int/Int_Digtal.h"
-#include "./Int/Int_Keyboard.h"
+#include "Int_Digtal.h"
+#include "Int_Keyboard.h"
 
 void main()
 {

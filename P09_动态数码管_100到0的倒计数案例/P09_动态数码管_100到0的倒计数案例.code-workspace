@@ -5,6 +5,8 @@
         }
     ],
     "settings": {
+        "EIDE.SourceTree.AutoSearchIncludePath": true,
+        "EIDE.SourceTree.AutoSearchObjFile": true,
         "files.autoGuessEncoding": false,
         "files.encoding": "gbk",
         "EIDE.ARM.Option.AutoGenerateRTE_Components": false,

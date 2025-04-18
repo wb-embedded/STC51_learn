@@ -1,4 +1,4 @@
-#include "STC89C5XRC.H"
+#include <STC89C5XRC.H>
 #include <INTRINS.H>
 
 #define SMG_EN P36

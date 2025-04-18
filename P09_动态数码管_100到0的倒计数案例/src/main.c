@@ -1,7 +1,6 @@
 #include "STC89C5XRC.H"
-#include "./Int/Int_Digtal.h"
-#include <INTRINS.H>
-#include "./Com/Com_Util.h"
+#include "Int_Digtal.h"
+#include "Com_Util.h"
 
 void main()
 {
