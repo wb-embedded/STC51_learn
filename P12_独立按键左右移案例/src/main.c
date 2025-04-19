@@ -27,7 +27,6 @@ void main()
     Int_Digtal_SetCacheByBin(str);
     while(1)
     {
-        // i = 0;
         if(Int_Keyboard_IsPressedBySw1())
         {
             num *= 2;
