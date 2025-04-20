@@ -552,7 +552,7 @@ void ShowDigtalNum(unsigned long num)
  }
 }
 
-void SetCache(unsigned char num)
+void SetCache(unsigned long num)
 {
  unsigned char i;
  for(i = 0; i < 8; i++)
@@ -595,3 +595,966 @@ void main()
 }
 ```
 
+
+
+## Chapter 8 模块化设计
+
+分模块编写代码
+
+数码管显示代码
+
+##### Int_Digtal.h
+
+```
+#ifndef __INT_DIGTAL_H__
+#define __INT_DIGTAL_H__
+#include "../STC89C5XRC.H"
+
+#define SMG_EN P36
+#define LED_EN P34
+
+//将待显示的数字加载到缓存
+void Int_Digtal_SetCache(unsigned long num);
+
+//将缓存中的数字刷写到数码管
+void Int_Digtal_FlushDigtal();
+
+#endif
+```
+
+##### Int_Digtal.c
+
+```
+#include "Int_Digtal.h"
+//数码管显示数组
+static unsigned char s_digtal_codes[10] = {
+ 0x3F,//0
+ 0x06,//1
+ 0x5B,//2
+ 0x4F,//3
+ 0x66,//4
+ 0x6D,//5
+ 0x7D,//6
+ 0x07,//7
+ 0x7F,//8
+ 0x6F//9
+};
+
+static unsigned char s_buff[8];
+
+static void Int_Digtal_DisplaySingle(unsigned char n, unsigned char num)
+{
+ P0 = 0;
+ //片选
+ //将P13，P14，P15清零
+ P1 &= 0xC7;
+ //设置P13，P14，P15的值
+ P1 |= (n << 3);
+ 
+ //段选
+ P0 = num;
+}
+
+void Int_Digtal_SetCache(unsigned long num)
+{
+ unsigned char i;
+ for(i = 0; i < 8; i++)
+ {
+  s_buff[i] = 0x00;
+ }
+ if(num == 0)
+ {
+  s_buff[7] = s_digtal_codes[0];
+  return;
+ }
+ i = 7;
+ while(num != 0)
+ {
+  s_buff[i] = s_digtal_codes[num % 10];
+  num /= 10;
+  i--;
+ }
+}
+
+void Int_Digtal_FlushDigtal()
+{
+ unsigned char i;
+ for(i = 0; i < 8; i++)
+ {
+  Int_Digtal_DisplaySingle(i, s_buff[i]);
+ }
+}
+```
+
+再在主函数中调用相关的文件和函数
+
+
+
+## Chapter 9 动态数码管_100到0的倒计数
+
+#### 编写延时函数
+
+##### Com_Util.h
+
+```
+#ifndef __Com_Util_H__
+#define __Com_Util_H__
+
+void Delay1ms();
+
+#endif
+```
+
+##### Com_Util.c
+
+```
+#include "Com_Util.h"
+#include <INTRINS.H>
+
+void Delay1ms()   //@11.0592MHz
+{
+  unsigned char data i, j;
+  _nop_();
+  i = 2;
+  j = 199;
+  do
+  {
+​    while (--j);
+  } while (--i);
+}
+```
+
+#### 编写主函数
+
+```
+#include "STC89C5XRC.H"
+#include "./Int/Int_Digtal.h"
+#include <INTRINS.H>
+#include "./Com/Com_Util.h"
+
+void main()
+{
+ int i = 100, j = 0;
+ SMG_EN = 0; //SMG_EN 低电平有效
+ LED_EN = 0; //LED_EN 高电平有效
+ while(1)
+ {
+  if(j == 1000)
+  {
+   j = 0;
+   if(i >= 0)
+   {
+​    Int_Digtal_SetCache(i);
+​    i--;
+   }
+  }
+  j++;
+  Int_Digtal_FlushDigtal();
+ }
+}
+```
+
+
+
+## Chapter 10 独立按键
+
+#### 硬件原理图
+
+![image-20250417152840258](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20250417152840258.png)
+
+由原理图可知，当按键未被按下时，引脚为高电平，被按下时为低电平。
+
+按一次按键是先从高变成低，再从低变成高的过程。
+
+由于硬件限制，所以要加入10ms的延时，排除硬件因素的误触发。
+
+#### 编写按键函数
+
+```
+#ifndef __Int_Keyboard_H__
+#define __Int_Keyboard_H__
+
+#include "../STC89C5xRC.H"
+#include "../Com/Com_Util.h"
+
+bit Int_Keyboard_IsPressedBySw1();
+bit Int_Keyboard_IsPressedBySw2();
+bit Int_Keyboard_IsPressedBySw3();
+bit Int_Keyboard_IsPressedBySw4();
+
+#endif
+```
+
+```
+#include "Int_Keyboard.h"
+
+bit Int_Keyboard_IsPressedBySw1()
+{
+  if(P42)
+  {
+​    Delay10ms();//防止因为硬件原因的误触发
+​    if(P42)
+​    {
+​      return 0;
+​    }
+  }
+  while(1)//不确定什么时候松开按键，需要循环来一直扫描状态
+  {
+​    if(P42)
+​    {
+​      Delay10ms();
+​      if(P42)
+​      {
+​        return 1;
+​      }
+​    }
+  }
+}
+
+bit Int_Keyboard_IsPressedBySw2()
+{
+  if(P43)
+  {
+​    Delay10ms();
+​    if(P43)
+​    {
+​      return 0;
+​    }
+  }
+  while(1)
+  {
+​    if(P43)
+​    {
+​      Delay10ms();
+​      if(P43)
+​      {
+​        return 1;
+​      }
+​    }
+  }
+}
+
+bit Int_Keyboard_IsPressedBySw3()
+{
+  if(P32)
+  {
+​     Delay10ms();
+​    if(P32)
+​    {
+​      return 0;
+​    }
+  }
+  while(1)
+  {
+​    if(P32)
+​    {
+​      Delay10ms();
+​      if(P32)
+​      {
+​        return 1;
+​      }
+​    }
+  }
+}
+
+bit Int_Keyboard_IsPressedBySw4()
+{
+  if(P33)
+  {
+​    Delay10ms();
+​    if(P33)
+​    {
+​      return 0;
+​    }
+  }
+  while(1)
+  {
+​    if(P33)
+​    {
+​      Delay10ms();
+​      if(P33)
+​      {
+​        return 1;
+​      }
+​    }
+  }
+}
+```
+
+
+
+## Chapter 11 按键计数
+
+##### 需要同时用到按键，数码管以及延时
+
+```c
+#include "./Int/Int_Digtal.h"
+#include "./Int/Int_Keyboard.h"
+
+void main()
+{
+  unsigned long num = 0, i;
+  SMG_EN = 0;
+  LED_EN = 0;
+  while(1)
+  {
+​    i = 0;
+​    if(Int_Keyboard_IsPressedBySw1())
+​    {
+​      num += 1;
+​    }
+​    if(Int_Keyboard_IsPressedBySw2())
+​    {
+​      num += 10;
+​    }
+​    if(Int_Keyboard_IsPressedBySw3())
+​    {
+​      num += 100;
+​    }
+​    if(Int_Keyboard_IsPressedBySw4())
+​    {
+​      num += 1000;
+​    }
+​    Int_Digtal_SetCache(num);
+​    while(i < 100)
+​    {
+​      Int_Digtal_FlushDigtal();
+​      i++;
+​    }
+  }
+}
+```
+
+
+
+## Chapter 12 独立按键左右移动
+
+先将十进制数转换为二进制数，左移即为乘2，右移即为除二
+
+##### 修改Int_Keyboard.c文件
+
+```c
+#include "Int_Keyboard.h"
+
+bit Int_Keyboard_IsPressedBySw1()
+{
+  if(P42)
+  {
+​    return 0;
+  }
+  Delay10ms();
+  if(P42)
+  {
+​    return 0;
+  }
+  while(1)
+  {
+​    if(P42)
+​    {
+​      Delay10ms();
+​      if(P42)
+​      {
+​        return 1;
+​      }
+​    }
+  }
+}
+
+bit Int_Keyboard_IsPressedBySw2()
+{
+  if(P43)
+  {
+​    return 0;
+  }
+  Delay10ms();
+  if(P43)
+  {
+​    return 0;
+  }
+  while(1)
+  {
+​    if(P43)
+​    {
+​      Delay10ms();
+​      if(P43)
+​      {
+​        return 1;
+​      }
+​    }
+  }
+}
+
+bit Int_Keyboard_IsPressedBySw3()
+{
+  if(P32)
+  {
+​    return 0;
+  }
+  Delay10ms();
+  if(P32)
+  {
+​    return 0;
+  }
+  while(1)
+  {
+​    if(P32)
+​    {
+​      Delay10ms();
+​      if(P32)
+​      {
+​        return 1;
+​      }
+​    }
+  }
+}
+
+bit Int_Keyboard_IsPressedBySw4()
+{
+  if(P33)
+  {
+​    return 0;
+  }
+  Delay10ms();
+  if(P33)
+  {
+​    return 0;
+  }
+  while(1)
+  {
+​    if(P33)
+​    {
+​      Delay10ms();
+​      if(P33)
+​      {
+​        return 1;
+​      }
+​    }
+  }
+}
+```
+
+main.c文件
+
+```c
+#include "./Int/Int_Digtal.h"
+#include "./Int/Int_Keyboard.h"
+
+void coverNumToBin(unsigned char num, unsigned char* p_data)
+{
+  unsigned char i;
+  for(i = 0; i < 8; i++)
+  {
+​    p_data[i] = 0;
+  }
+  i = 7;
+  while(num != 0)
+  {
+​    p_data[i] = num % 2;
+​    num /= 2;
+​    i--;
+  }
+}
+
+void main()
+{
+  unsigned char num = 255;
+  unsigned char str[8];
+  SMG_EN = 0;
+  LED_EN = 0;
+  coverNumToBin(num, str);
+  Int_Digtal_SetCacheByBin(str);
+  while(1)
+  {
+​    if(Int_Keyboard_IsPressedBySw1())
+​    {
+​      num *= 2;
+​      coverNumToBin(num, str);
+​      Int_Digtal_SetCacheByBin(str);
+​    }
+​    if(Int_Keyboard_IsPressedBySw2())
+​    {
+​      num /= 2;
+​      coverNumToBin(num, str);
+​      Int_Digtal_SetCacheByBin(str);
+​    }
+​    if(Int_Keyboard_IsPressedBySw3())
+​    {
+​      num += 1;
+​      coverNumToBin(num, str);
+​      Int_Digtal_SetCacheByBin(str);
+​    }
+​    if(Int_Keyboard_IsPressedBySw4())
+​    {
+​      num = 0;
+​      coverNumToBin(num, str);
+​      Int_Digtal_SetCacheByBin(str);
+​    }
+​    Int_Digtal_FlushDigtal();
+  }
+}
+```
+
+
+
+## Chapter 13 矩阵按键
+
+因为锁存器特性，引脚需先置为1才能读到外部正确的状态
+
+##### 接线原理图
+
+![image-20250419152245174](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20250419152245174.png)
+
+当P20为低，其他为高时，按下(1,1)按钮，P24被拉低，可以通过P24状态判断按钮状态，其他同理
+
+##### 代码
+
+```c
+#include "Int_MatrixKey.h"
+unsigned char Int_MatrixKey_GetPressedKey()
+{
+  P2 = 0xFE; // 1111 1110 第一行
+  if(P24 == 0)
+  {
+​    Delay10ms();
+​    if(P24 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P24 == 1)
+​        {
+​          Delay10ms();
+​          if(P24 == 1)
+​          {
+​            return 7;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P25 == 0)
+  {
+​    Delay10ms();
+​    if(P25 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P25 == 1)
+​        {
+​          Delay10ms();
+​          if(P25 == 1)
+​          {
+​            return 8;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P26 == 0)
+  {
+​    Delay10ms();
+​    if(P26 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P26 == 1)
+​        {
+​          Delay10ms();
+​          if(P26 == 1)
+​          {
+​            return 9;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P27 == 0)
+  {
+​    Delay10ms();
+​    if(P27 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P27 == 1)
+​        {
+​          Delay10ms();
+​          if(P27 == 1)
+​          {
+​            return 10;
+​          }
+​        }
+​      }
+​    }
+  }
+  P2 = 0xFD; // 1111 1101 第二行
+  if(P24 == 0)
+  {
+​    Delay10ms();
+​    if(P24 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P24 == 1)
+​        {
+​          Delay10ms();
+​          if(P24 == 1)
+​          {
+​            return 11;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P25 == 0)
+  {
+​    Delay10ms();
+​    if(P25 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P25 == 1)
+​        {
+​          Delay10ms();
+​          if(P25 == 1)
+​          {
+​            return 12;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P26 == 0)
+  {
+​    Delay10ms();
+​    if(P26 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P26 == 1)
+​        {
+​          Delay10ms();
+​          if(P26 == 1)
+​          {
+​            return 13;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P27 == 0)
+  {
+​    Delay10ms();
+​    if(P27 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P27 == 1)
+​        {
+​          Delay10ms();
+​          if(P27 == 1)
+​          {
+​            return 14;
+​          }
+​        }
+​      }
+​    }
+  }
+  P2 = 0xFB; // 1111 1011 第三行
+  if(P24 == 0)
+  {
+​    Delay10ms();
+​    if(P24 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P24 == 1)
+​        {
+​          Delay10ms();
+​          if(P24 == 1)
+​          {
+​            return 15;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P25 == 0)
+  {
+​    Delay10ms();
+​    if(P25 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P25 == 1)
+​        {
+​          Delay10ms();
+​          if(P25 == 1)
+​          {
+​            return 16;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P26 == 0)
+  {
+​    Delay10ms();
+​    if(P26 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P26 == 1)
+​        {
+​          Delay10ms();
+​          if(P26 == 1)
+​          {
+​            return 17;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P27 == 0)
+  {
+​    Delay10ms();
+​    if(P27 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P27 == 1)
+​        {
+​          Delay10ms();
+​          if(P27 == 1)
+​          {
+​            return 18;
+​          }
+​        }
+​      }
+​    }
+  }
+  P2 = 0xF7; // 1111 0111
+  if(P24 == 0)
+  {
+​    Delay10ms();
+​    if(P24 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P24 == 1)
+​        {
+​          Delay10ms();
+​          if(P24 == 1)
+​          {
+​            return 19;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P25 == 0)
+  {
+​    Delay10ms();
+​    if(P25 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P25 == 1)
+​        {
+​          Delay10ms();
+​          if(P25 == 1)
+​          {
+​            return 20;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P26 == 0)
+  {
+​    Delay10ms();
+​    if(P26 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P26 == 1)
+​        {
+​          Delay10ms();
+​          if(P26 == 1)
+​          {
+​            return 21;
+​          }
+​        }
+​      }
+​    }
+  }
+  if(P27 == 0)
+  {
+​    Delay10ms();
+​    if(P27 == 0)
+​    {
+​      while(1)
+​      {
+​        if(P27 == 1)
+​        {
+​          Delay10ms();
+​          if(P27 == 1)
+​          {
+​            return 22;
+​          }
+​        }
+​      }
+​    }
+  }
+  return 0;
+}
+```
+
+## Chapter 14 外部中断
+
+STC89C52有8个中断，可设置4个优先级，高优先级中断可以打断低优先级中断，当两个中断平级时，按照查询顺序决定哪一个中断先被响应
+
+外部中断0(0)，1(2)，2(6)，3(7)
+
+定时器中断0(1)，1(3)，2(5)
+
+串口中断(4)
+
+##### 注：括号内为对应序号
+
+EA：所有终端总开关
+
+EX0：外部中断0允许控制位
+
+IT0：外部中断0中断源类型选择位
+
+IE0/P3.2：外部中断请求源
+
+```c
+#include "Dri_Interrupt.h"
+void Dri_Interrupt_Init()
+{
+  //总中断允许控制位
+  EA = 1;
+
+  //外部中断0允许控制位
+  EX0 = 1;
+
+  //外部中断0中断源类型选择位
+  IT0 = 1;
+}
+
+static void Dri_Interrupt_Func() interrupt 0
+{
+  P00 = ~P00;
+}
+```
+
+
+
+## Chapter 15 计算器
+
+##### 代码如下
+
+```c
+#include "STC89C5XRC.H"
+#include "Int_Digtal.h"
+#include "Int_MatrixKey.h"
+
+unsigned long g_num1 = 0, g_num2 = 0, g_result = 0;
+unsigned char g_op = 0;
+
+//输入数字0~9
+void IntputNum(unsigned char num)
+{
+  //当未输入操作符时，对第一位数进行操作
+  if(g_op == 0)
+  {
+    g_num1 *= 10;
+    g_num1 += num;
+    //考虑到只输入一个数字情况
+    g_result = g_num1;
+    Int_Digtal_SetCache(g_num1);
+  }
+  //当已经输入了操作符后，应该对第二个数进行操作
+  else
+  {
+    g_num2 *= 10;
+    g_num2 += num;
+    Int_Digtal_SetCache(g_num2);
+  }
+}
+
+void InputEq()
+{
+  if(g_op == 10)
+  {
+    g_result += g_num2;
+  }
+  else if(g_op == 20)
+  {
+    g_result -= g_num2;
+  }
+  else if(g_op == 30)
+  {
+    g_result *= g_num2;
+  }
+  else if(g_op == 40)
+  {
+    g_result /= g_num2;
+  }
+  Int_Digtal_SetCache(g_result);
+  g_op = 0;
+}
+
+void IntputOp(unsigned char op)
+{
+  InputEq();
+  g_op = op;
+  g_num2 = 0;
+  g_num1 = 0;
+}
+
+void InputC()
+{
+  g_num1 = 0;
+  g_num2 = 0;
+  g_result = 0;
+  g_op = 0;
+  Int_Digtal_SetCache(0);
+}
+
+void main()
+{
+  unsigned char idx;
+  SMG_EN = 0; //SMG_EN 低电平有效
+  LED_EN = 0; //LED_EN 高电平有效
+  while(1)
+  {
+    idx = Int_MatrixKey_GetPressedKey();
+    if(idx != 255)
+    {
+      if(idx >=0 && idx <=9)
+      {
+        IntputNum(idx);
+      }
+      else if(idx >= 10 && idx <= 40)
+      {
+        IntputOp(idx);
+      }
+      else if(idx == 50)
+      {
+        InputC();
+      }
+      else if(idx == 60)
+      {
+        InputEq();
+      }
+    }
+    Int_Digtal_FlushDigtal();
+  }
+}
+
+```
+
+
+
+## Chapter 16 定时器

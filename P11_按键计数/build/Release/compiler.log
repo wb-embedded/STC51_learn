@@ -1,0 +1,14 @@
+>>> cc
+
+
+
+>>> ld
+
+
+LX51 LINKER/LOCATER V4.66.100.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 1995-2021, Arm Limited or its Affiliates. All rights reserved.
+@e:\嵌入式\projects\P11_按键计数\build\Release\P11_按键计数.lnp .\build\Release\.obj\src\Com\Com_Util.o,.\build\Release\.obj\src\Int\Int_Digtal.o,.\build\Release\.obj\src\Int\Int_Keyboard.o,.\build\Release\.obj\src\main.o TO .\build\Release\P11_按键计数
+PRINT(.\build\Release\P11_按键计数.map) REMOVEUNUSED
+
+Program Size: data=58.0 xdata=0 const=0 code=840
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

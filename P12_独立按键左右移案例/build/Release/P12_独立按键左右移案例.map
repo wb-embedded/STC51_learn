@@ -1,0 +1,235 @@
+LX51 LINKER/LOCATER V4.66.100.0                                                         04/19/2025  13:05:25  PAGE 1
+
+
+LX51 LINKER/LOCATER V4.66.100.0, INVOKED BY:
+E:\PROGRAM FILES\KEIL_V5\C51\BIN\LX51.EXE .\BUILD\RELEASE\.OBJ\SRC\COM\COM_UTIL.O, .\BUILD\RELEASE\.OBJ\SRC\INT\INT_DIGT
+>> AL.O, .\BUILD\RELEASE\.OBJ\SRC\INT\INT_KEYBOARD.O, .\BUILD\RELEASE\.OBJ\SRC\MAIN.O TO .\BUILD\RELEASE\P12_¶ÀÁ¢°´¼ü×óÓ
+>> ÒÒÆ°¸Àý PRINT (.\build\Release\P12_¶ÀÁ¢°´¼ü×óÓÒÒÆ°¸Àý.map) REMOVEUNUSED
+
+
+CPU MODE:     8051 MODE
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\BUILD\RELEASE\.OBJ\SRC\COM\COM_UTIL.O (COM_UTIL)
+         COMMENT TYPE 0: C51 V9.60.7.0
+  .\BUILD\RELEASE\.OBJ\SRC\INT\INT_DIGTAL.O (INT_DIGTAL)
+         COMMENT TYPE 0: C51 V9.60.7.0
+  .\BUILD\RELEASE\.OBJ\SRC\INT\INT_KEYBOARD.O (INT_KEYBOARD)
+         COMMENT TYPE 0: C51 V9.60.7.0
+  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+         COMMENT TYPE 0: C51 V9.60.7.0
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTOPTR)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+  E:\PROGRAM FILES\KEIL_V5\C51\LIB\C51S.LIB (?C_INIT)
+         COMMENT TYPE 1: A51 / ASM51 Assembler
+
+
+ACTIVE MEMORY CLASSES OF MODULE:  .\BUILD\RELEASE\P12_¶ÀÁ¢°´¼ü×óÓÒÒÆ°¸Àý (COM_UTIL)
+
+BASE        START       END         USED      MEMORY CLASS
+==========================================================
+C:000000H   C:000000H   C:00FFFFH   000265H   CODE
+I:000000H   I:000000H   I:00007FH   000038H   DATA
+I:000000H   I:000000H   I:0000FFH   000001H   IDATA
+
+
+MEMORY MAP OF MODULE:  .\BUILD\RELEASE\P12_¶ÀÁ¢°´¼ü×óÓÒÒÆ°¸Àý (COM_UTIL)
+
+
+START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
+=========================================================================
+
+* * * * * * * * * * *   D A T A   M E M O R Y   * * * * * * * * * * * * *
+000000H   000007H   000008H   ---    AT..     DATA           "REG BANK 0"
+000008H   000019H   000012H   BYTE   UNIT     DATA           ?DT?INT_DIGTAL
+00001AH   00002BH   000012H   BYTE   UNIT     DATA           ?DT?MAIN
+00002CH   000037H   00000CH   BYTE   UNIT     DATA           _DATA_GROUP_
+000038H   000038H   000001H   BYTE   UNIT     IDATA          ?STACK
+
+* * * * * * * * * * *   C O D E   M E M O R Y   * * * * * * * * * * * * *
+000000H   000002H   000003H   ---    OFFS..   CODE           ?CO??C_STARTUP?0
+000003H   00008EH   00008CH   BYTE   UNIT     CODE           ?C_C51STARTUP
+00008FH   00010AH   00007CH   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
+00010BH   000159H   00004FH   BYTE   UNIT     CODE           ?C?LIB_CODE
+00015AH   000199H   000040H   BYTE   UNIT     CODE           ?PR?_COVERNUMTOBIN?MAIN
+00019AH   0001BFH   000026H   BYTE   UNIT     CODE           ?PR?_INT_DIGTAL_SETCACHEBYBIN?INT_DIGTAL
+0001C0H   0001D8H   000019H   BYTE   UNIT     CODE           ?C_INITSEG
+0001D9H   0001F0H   000018H   BYTE   UNIT     CODE           ?PR?INT_KEYBOARD_ISPRESSEDBYSW1?INT_KEYBOARD
+0001F1H   000208H   000018H   BYTE   UNIT     CODE           ?PR?INT_KEYBOARD_ISPRESSEDBYSW2?INT_KEYBOARD
+000209H   000220H   000018H   BYTE   UNIT     CODE           ?PR?INT_KEYBOARD_ISPRESSEDBYSW3?INT_KEYBOARD
+000221H   000238H   000018H   BYTE   UNIT     CODE           ?PR?INT_KEYBOARD_ISPRESSEDBYSW4?INT_KEYBOARD
+000239H   00024AH   000012H   BYTE   UNIT     CODE           ?PR?INT_DIGTAL_FLUSHDIGTAL?INT_DIGTAL
+00024BH   00025BH   000011H   BYTE   UNIT     CODE           ?PR?_INT_DIGTAL_DISPLAYSINGLE?INT_DIGTAL
+00025CH   000264H   000009H   BYTE   UNIT     CODE           ?PR?DELAY10MS?COM_UTIL
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/19/2025  13:05:25  PAGE 2
+
+
+
+
+
+OVERLAY MAP OF MODULE:   .\BUILD\RELEASE\P12_¶ÀÁ¢°´¼ü×óÓÒÒÆ°¸Àý (COM_UTIL)
+
+
+FUNCTION/MODULE                                BIT_GROUP   DATA_GROUP 
+--> CALLED FUNCTION/MODULE                    START  STOP  START  STOP
+======================================================================
+?C_C51STARTUP                                 ----- -----  ----- -----
+  +--> MAIN/MAIN
+  +--> ?C_INITSEG
+
+MAIN/MAIN                                     ----- -----  002CH 0034H
+  +--> _COVERNUMTOBIN/MAIN
+  +--> _INT_DIGTAL_SETCACHEBYBIN/INT_DIGTAL
+  +--> INT_KEYBOARD_ISPRESSEDBYSW1/INT_KEYBOARD
+  +--> INT_KEYBOARD_ISPRESSEDBYSW2/INT_KEYBOARD
+  +--> INT_KEYBOARD_ISPRESSEDBYSW3/INT_KEYBOARD
+  +--> INT_KEYBOARD_ISPRESSEDBYSW4/INT_KEYBOARD
+  +--> INT_DIGTAL_FLUSHDIGTAL/INT_DIGTAL
+
+_COVERNUMTOBIN/MAIN                           ----- -----  0035H 0037H
+
+_INT_DIGTAL_SETCACHEBYBIN/INT_DIGTAL          ----- -----  0035H 0037H
+
+INT_KEYBOARD_ISPRESSEDBYSW1/INT_KEYBOARD      ----- -----  ----- -----
+  +--> DELAY10MS/COM_UTIL
+
+DELAY10MS/COM_UTIL                            ----- -----  ----- -----
+
+INT_KEYBOARD_ISPRESSEDBYSW2/INT_KEYBOARD      ----- -----  ----- -----
+  +--> DELAY10MS/COM_UTIL
+
+INT_KEYBOARD_ISPRESSEDBYSW3/INT_KEYBOARD      ----- -----  ----- -----
+  +--> DELAY10MS/COM_UTIL
+
+INT_KEYBOARD_ISPRESSEDBYSW4/INT_KEYBOARD      ----- -----  ----- -----
+  +--> DELAY10MS/COM_UTIL
+
+INT_DIGTAL_FLUSHDIGTAL/INT_DIGTAL             ----- -----  ----- -----
+  +--> _INT_DIGTAL_DISPLAYSINGLE/INT_DIGTAL
+
+_INT_DIGTAL_DISPLAYSINGLE/INT_DIGTAL          ----- -----  ----- -----
+
+?C_INITSEG                                    ----- -----  ----- -----
+
+
+
+PUBLIC SYMBOLS OF MODULE:  .\BUILD\RELEASE\P12_¶ÀÁ¢°´¼ü×óÓÒÒÆ°¸Àý (COM_UTIL)
+
+
+      VALUE       CLASS    TYPE      PUBLIC SYMBOL NAME
+      =================================================
+      0100010BH   CODE     ---       ?C?CLDOPTR
+      00000000H   NUMBER   ---       ?C?CODESEG
+      01000138H   CODE     ---       ?C?CSTOPTR
+      00000000H   NUMBER   ---       ?C?XDATASEG
+      0100004AH   CODE     ---       ?C_START
+      01000000H   CODE     ---       ?C_STARTUP
+      01000162H   CODE     ---       _coverNumToBin
+      0100019AH   CODE     ---       _Int_Digtal_SetCacheByBin
+      0100025CH   CODE     ---       Delay10ms
+      01000239H   CODE     ---       Int_Digtal_FlushDigtal
+      010001D9H   CODE     ---       Int_Keyboard_IsPressedBySw1
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/19/2025  13:05:25  PAGE 3
+
+
+      010001F1H   CODE     ---       Int_Keyboard_IsPressedBySw2
+      01000209H   CODE     ---       Int_Keyboard_IsPressedBySw3
+      01000221H   CODE     ---       Int_Keyboard_IsPressedBySw4
+      0100008FH   CODE     ---       main
+
+
+
+SYMBOL TABLE OF MODULE:  .\BUILD\RELEASE\P12_¶ÀÁ¢°´¼ü×óÓÒÒÆ°¸Àý (COM_UTIL)
+
+      VALUE       REP       CLASS    TYPE      SYMBOL NAME
+      ====================================================
+      ---         MODULE    ---      ---       COM_UTIL
+      0100025CH   PUBLIC    CODE     ---       Delay10ms
+
+      0100025CH   BLOCK     CODE     ---       LVL=0
+      0100025CH   BLOCK     CODE     NEAR LAB  LVL=1
+      00000007H   SYMBOL    DATA     VOID      i
+      00000006H   SYMBOL    DATA     VOID      j
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       INT_DIGTAL
+      0100019AH   PUBLIC    CODE     ---       _Int_Digtal_SetCacheByBin
+      01000239H   PUBLIC    CODE     ---       Int_Digtal_FlushDigtal
+
+      0100024BH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      01000239H   BLOCK     CODE     ---       LVL=0
+      01000239H   BLOCK     CODE     NEAR LAB  LVL=1
+      00000006H   SYMBOL    DATA     VOID      i
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      0100019AH   BLOCK     CODE     ---       LVL=0
+      010001A0H   BLOCK     CODE     NEAR LAB  LVL=1
+      00000007H   SYMBOL    DATA     VOID      i
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       INT_KEYBOARD
+      01000221H   PUBLIC    CODE     ---       Int_Keyboard_IsPressedBySw4
+      01000209H   PUBLIC    CODE     ---       Int_Keyboard_IsPressedBySw3
+      010001F1H   PUBLIC    CODE     ---       Int_Keyboard_IsPressedBySw2
+      010001D9H   PUBLIC    CODE     ---       Int_Keyboard_IsPressedBySw1
+
+      010001D9H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      010001F1H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      01000209H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      01000221H   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       MAIN
+      0100008FH   PUBLIC    CODE     ---       main
+      01000162H   PUBLIC    CODE     ---       _coverNumToBin
+
+      0100015AH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=0
+
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/19/2025  13:05:25  PAGE 4
+
+
+      01000162H   BLOCK     CODE     ---       LVL=0
+      01000168H   BLOCK     CODE     NEAR LAB  LVL=1
+      00000006H   SYMBOL    DATA     VOID      i
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      0100008FH   BLOCK     CODE     ---       LVL=0
+      0100008FH   BLOCK     CODE     NEAR LAB  LVL=1
+      0000002CH   SYMBOL    DATA     VOID      num
+      0000002DH   SYMBOL    DATA     VOID      str
+      ---         BLOCKEND  ---      ---       LVL=1
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      ---         MODULE    ---      ---       ?C_STARTUP
+      01000000H   PUBLIC    CODE     ---       ?C_STARTUP
+
+      ---         MODULE    ---      ---       ?C?CLDOPTR
+      0100010BH   PUBLIC    CODE     ---       ?C?CLDOPTR
+
+      ---         MODULE    ---      ---       ?C?CSTOPTR
+      01000138H   PUBLIC    CODE     ---       ?C?CSTOPTR
+
+      ---         MODULE    ---      ---       ?C_INIT
+      0100004AH   PUBLIC    CODE     ---       ?C_START
+
+Program Size: data=57.0 xdata=0 const=0 code=613
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,1 @@
+"E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC;src;src/Com;src/Int) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)

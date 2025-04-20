@@ -1,0 +1,2 @@
+.\build\Release\.obj\src\Com\Com_Util.o,.\build\Release\.obj\src\Int\Int_Digtal.o,.\build\Release\.obj\src\Int\Int_Keyboard.o,.\build\Release\.obj\src\main.o TO .\build\Release\P12_独立按键左右移案例
+PRINT(.\build\Release\P12_独立按键左右移案例.map) REMOVEUNUSED

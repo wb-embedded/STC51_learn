@@ -1,0 +1,684 @@
+[2025-04-17 22:17:58]	link failed !, exit code: 2
+   at unify_builder.Program.Main(String[] args_)
+---
+
+LX51 LINKER/LOCATER V4.66.100.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 1995-2021, Arm Limited or its Affiliates. All rights reserved.
+@e:\嵌入式\projects\P12_独立按键左右移案例\build\Release\P12_独立按键左右移案例.lnp .\build\Release\.obj\src\Com\Com_Util.o,.\build\Release\.obj\src\main.o TO .\build\Release\P12_独立按键左右移案例
+PRINT(.\build\Release\P12_独立按键左右移案例.map) REMOVEUNUSED
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Digtal_FlushDigtal
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Digtal_FlushDigtal
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 10000BAH
+
+Program Size: data=43.0 xdata=0 const=0 code=241
+LX51 RUN COMPLETE.  0 WARNING(S),  2 ERROR(S)
+
+
+[2025-04-17 22:19:00]	link failed !, exit code: 2
+   at unify_builder.Program.Main(String[] args_)
+---
+
+LX51 LINKER/LOCATER V4.66.100.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 1995-2021, Arm Limited or its Affiliates. All rights reserved.
+@e:\嵌入式\projects\P12_独立按键左右移案例\build\Release\P12_独立按键左右移案例.lnp .\build\Release\.obj\src\Com\Com_Util.o,.\build\Release\.obj\src\main.o TO .\build\Release\P12_独立按键左右移案例
+PRINT(.\build\Release\P12_独立按键左右移案例.map) REMOVEUNUSED
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Digtal_FlushDigtal
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Int_Digtal_SetCache
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw1
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw2
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw3
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw4
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw1
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100001AH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw2
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 1000034H
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw3
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100004EH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw4
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 1000068H
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Int_Digtal_SetCache
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100008BH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Digtal_FlushDigtal
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 10000A5H
+
+Program Size: data=43.0 xdata=0 const=0 code=360
+LX51 RUN COMPLETE.  0 WARNING(S),  12 ERROR(S)
+
+
+[2025-04-17 22:19:04]	link failed !, exit code: 2
+   at unify_builder.Program.Main(String[] args_)
+---
+
+LX51 LINKER/LOCATER V4.66.100.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 1995-2021, Arm Limited or its Affiliates. All rights reserved.
+@e:\嵌入式\projects\P12_独立按键左右移案例\build\Release\P12_独立按键左右移案例.lnp .\build\Release\.obj\src\Com\Com_Util.o,.\build\Release\.obj\src\main.o TO .\build\Release\P12_独立按键左右移案例
+PRINT(.\build\Release\P12_独立按键左右移案例.map) REMOVEUNUSED
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Digtal_FlushDigtal
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Int_Digtal_SetCache
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw1
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw2
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw3
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw4
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw1
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100001AH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw2
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 1000034H
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw3
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100004EH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw4
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 1000068H
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Int_Digtal_SetCache
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100008BH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Digtal_FlushDigtal
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 10000A5H
+
+Program Size: data=43.0 xdata=0 const=0 code=360
+LX51 RUN COMPLETE.  0 WARNING(S),  12 ERROR(S)
+
+
+[2025-04-17 22:19:41]	link failed !, exit code: 2
+   at unify_builder.Program.Main(String[] args_)
+---
+
+LX51 LINKER/LOCATER V4.66.100.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 1995-2021, Arm Limited or its Affiliates. All rights reserved.
+@e:\嵌入式\projects\P12_独立按键左右移案例\build\Release\P12_独立按键左右移案例.lnp .\build\Release\.obj\src\Com\Com_Util.o,.\build\Release\.obj\src\main.o TO .\build\Release\P12_独立按键左右移案例
+PRINT(.\build\Release\P12_独立按键左右移案例.map) REMOVEUNUSED
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Digtal_FlushDigtal
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  _Int_Digtal_SetCache
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw1
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw2
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw3
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L127: UNRESOLVED EXTERNAL SYMBOL
+    SYMBOL:  Int_Keyboard_IsPressedBySw4
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw1
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100001AH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw2
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 1000034H
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw3
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100004EH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Keyboard_IsPressedBySw4
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 1000068H
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  _Int_Digtal_SetCache
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 100008BH
+
+*** ERROR L128: REFERENCE MADE TO UNRESOLVED EXTERNAL
+    SYMBOL:  Int_Digtal_FlushDigtal
+    MODULE:  .\BUILD\RELEASE\.OBJ\SRC\MAIN.O (MAIN)
+    ADDRESS: 10000A5H
+
+Program Size: data=35.0 xdata=0 const=0 code=360
+LX51 RUN COMPLETE.  0 WARNING(S),  12 ERROR(S)
+
+
+[2025-04-17 22:21:07]	[done]
+	build successfully !
+
+[2025-04-17 22:37:42]	[done]
+	build successfully !
+
+[2025-04-17 22:39:57]	[done]
+	build successfully !
+
+[2025-04-17 22:40:11]	[done]
+	build successfully !
+
+[2025-04-17 22:40:50]	[done]
+	build successfully !
+
+[2025-04-17 22:43:15]	[done]
+	build successfully !
+
+[2025-04-17 22:43:38]	[done]
+	build successfully !
+
+[2025-04-17 22:44:37]	[done]
+	build successfully !
+
+[2025-04-17 22:45:45]	[done]
+	build successfully !
+
+[2025-04-17 22:46:21]	[done]
+	build successfully !
+
+[2025-04-17 22:50:34]	[done]
+	build successfully !
+
+[2025-04-17 22:51:22]	[done]
+	build successfully !
+
+[2025-04-17 22:51:38]	[done]
+	build successfully !
+
+[2025-04-17 22:57:43]	[done]
+	build successfully !
+
+[2025-04-17 23:02:54]	[done]
+	build successfully !
+
+[2025-04-17 23:03:42]	[done]
+	build successfully !
+
+[2025-04-17 23:03:53]	[done]
+	build successfully !
+
+[2025-04-17 23:04:59]	[done]
+	build successfully !
+
+[2025-04-17 23:06:17]	[done]
+	build successfully !
+
+[2025-04-17 23:06:40]	[done]
+	build successfully !
+
+[2025-04-18 14:14:19]	[done]
+	build successfully !
+
+[2025-04-18 14:15:14]	[done]
+	build successfully !
+
+[2025-04-18 14:17:30]	[done]
+	build successfully !
+
+[2025-04-18 14:18:13]	[done]
+	build successfully !
+
+[2025-04-18 14:18:51]	[done]
+	build successfully !
+
+[2025-04-18 14:19:19]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 61 OF .\src\main.c: syntax error near '', expected '__asm'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2025-04-18 14:19:21]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** ERROR C141 IN LINE 61 OF .\src\main.c: syntax error near '', expected '__asm'
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
+
+[2025-04-18 14:19:46]	[done]
+	build successfully !
+
+[2025-04-18 14:21:51]	[done]
+	build successfully !
+
+[2025-04-18 14:22:08]	[done]
+	build successfully !
+
+[2025-04-18 14:24:25]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 33 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5xRC.H'
+*** ERROR C202 IN LINE 97 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 101 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 103 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 106 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 14:25:42]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 33 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5xRC.H'
+*** ERROR C202 IN LINE 97 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 101 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 103 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 106 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 14:26:27]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 33 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5xRC.H'
+*** ERROR C202 IN LINE 97 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 101 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 103 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 106 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 14:27:00]	[done]
+	build successfully !
+
+[2025-04-18 14:27:36]	[done]
+	build successfully !
+
+[2025-04-18 14:36:20]	[done]
+	build successfully !
+
+[2025-04-18 14:37:18]	[done]
+	build successfully !
+
+[2025-04-18 14:40:33]	[done]
+	build successfully !
+
+[2025-04-18 14:42:46]	[done]
+	build successfully !
+
+[2025-04-18 14:45:17]	[done]
+	build successfully !
+
+[2025-04-18 14:46:39]	[done]
+	build successfully !
+
+[2025-04-18 14:58:40]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 1 OF .\src\main.c: can't open file 'Int_Digtal.h'
+*** WARNING C318 IN LINE 2 OF .\src\main.c: can't open file 'Int_Keyboard.h'
+*** ERROR C202 IN LINE 24 OF .\src\main.c: 'SMG_EN': undefined identifier
+*** ERROR C202 IN LINE 25 OF .\src\main.c: 'LED_EN': undefined identifier
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  2 ERROR(S)
+
+[2025-04-18 14:58:58]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 1 OF .\src\main.c: can't open file 'Int_Digtal.h'
+*** WARNING C318 IN LINE 2 OF .\src\main.c: can't open file 'Int_Keyboard.h'
+*** ERROR C202 IN LINE 24 OF .\src\main.c: 'SMG_EN': undefined identifier
+*** ERROR C202 IN LINE 25 OF .\src\main.c: 'LED_EN': undefined identifier
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  2 ERROR(S)
+
+[2025-04-18 14:59:07]	[done]
+	build successfully !
+
+[2025-04-18 15:00:04]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 1 OF .\src\main.c: can't open file 'Int_Digtal.h'
+*** WARNING C318 IN LINE 2 OF .\src\main.c: can't open file 'Int_Keyboard.h'
+*** ERROR C202 IN LINE 24 OF .\src\main.c: 'SMG_EN': undefined identifier
+*** ERROR C202 IN LINE 25 OF .\src\main.c: 'LED_EN': undefined identifier
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  2 ERROR(S)
+
+[2025-04-18 15:00:18]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 1 OF .\src\main.c: can't open file 'Int_Digtal.h'
+*** WARNING C318 IN LINE 2 OF .\src\main.c: can't open file 'Int_Keyboard.h'
+*** ERROR C202 IN LINE 24 OF .\src\main.c: 'SMG_EN': undefined identifier
+*** ERROR C202 IN LINE 25 OF .\src\main.c: 'LED_EN': undefined identifier
+
+C51 COMPILATION COMPLETE.  2 WARNING(S),  2 ERROR(S)
+
+[2025-04-18 15:00:23]	[done]
+	build successfully !
+
+[2025-04-18 15:02:32]	[done]
+	build successfully !
+
+[2025-04-18 15:02:36]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 1 OF .\src\main.c: can't open file 'Int_Digtal.h'
+*** ERROR C202 IN LINE 24 OF .\src\main.c: 'SMG_EN': undefined identifier
+*** ERROR C202 IN LINE 25 OF .\src\main.c: 'LED_EN': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  2 ERROR(S)
+
+[2025-04-18 15:04:30]	[done]
+	build successfully !
+
+[2025-04-18 15:05:03]	[done]
+	build successfully !
+
+[2025-04-18 15:13:17]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\main.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\main.lst) INCDIR(src;../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 1 OF .\src\main.c: can't open file 'Int_Digtal.h'
+*** ERROR C202 IN LINE 24 OF .\src\main.c: 'SMG_EN': undefined identifier
+*** ERROR C202 IN LINE 25 OF .\src\main.c: 'LED_EN': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  2 ERROR(S)
+
+[2025-04-18 15:13:37]	[done]
+	build successfully !
+
+[2025-04-18 15:24:28]	[done]
+	build successfully !
+
+[2025-04-18 15:28:47]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5;../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Digtal.h: can't open file '../STC89C5xRC.H'
+*** ERROR C202 IN LINE 6 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 7 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 8 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 15:29:14]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5;../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5xRC.H'
+*** ERROR C202 IN LINE 6 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 7 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 8 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 15:32:23]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Keyboard.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Keyboard.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Keyboard.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC/STC;../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Keyboard.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Keyboard.h: can't open file '../STC89C5xRC.H'
+*** ERROR C202 IN LINE 5 OF .\src\Int\Int_Keyboard.c: 'P42': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Keyboard.c: 'P42': undefined identifier
+*** ERROR C202 IN LINE 16 OF .\src\Int\Int_Keyboard.c: 'P42': undefined identifier
+*** ERROR C202 IN LINE 19 OF .\src\Int\Int_Keyboard.c: 'P42': undefined identifier
+*** ERROR C202 IN LINE 29 OF .\src\Int\Int_Keyboard.c: 'P43': undefined identifier
+*** ERROR C202 IN LINE 34 OF .\src\Int\Int_Keyboard.c: 'P43': undefined identifier
+*** ERROR C202 IN LINE 40 OF .\src\Int\Int_Keyboard.c: 'P43': undefined identifier
+*** ERROR C202 IN LINE 43 OF .\src\Int\Int_Keyboard.c: 'P43': undefined identifier
+*** ERROR C202 IN LINE 53 OF .\src\Int\Int_Keyboard.c: 'P32': undefined identifier
+*** ERROR C202 IN LINE 58 OF .\src\Int\Int_Keyboard.c: 'P32': undefined identifier
+*** ERROR C202 IN LINE 64 OF .\src\Int\Int_Keyboard.c: 'P32': undefined identifier
+*** ERROR C202 IN LINE 67 OF .\src\Int\Int_Keyboard.c: 'P32': undefined identifier
+*** ERROR C202 IN LINE 77 OF .\src\Int\Int_Keyboard.c: 'P33': undefined identifier
+*** ERROR C202 IN LINE 82 OF .\src\Int\Int_Keyboard.c: 'P33': undefined identifier
+*** ERROR C202 IN LINE 88 OF .\src\Int\Int_Keyboard.c: 'P33': undefined identifier
+*** ERROR C202 IN LINE 91 OF .\src\Int\Int_Keyboard.c: 'P33': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  16 ERROR(S)
+
+[2025-04-18 15:32:30]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Keyboard.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Keyboard.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Keyboard.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC/STC;../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Keyboard.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Keyboard.h: can't open file '../STC89C5xRC.H'
+*** ERROR C202 IN LINE 5 OF .\src\Int\Int_Keyboard.c: 'P42': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Keyboard.c: 'P42': undefined identifier
+*** ERROR C202 IN LINE 16 OF .\src\Int\Int_Keyboard.c: 'P42': undefined identifier
+*** ERROR C202 IN LINE 19 OF .\src\Int\Int_Keyboard.c: 'P42': undefined identifier
+*** ERROR C202 IN LINE 29 OF .\src\Int\Int_Keyboard.c: 'P43': undefined identifier
+*** ERROR C202 IN LINE 34 OF .\src\Int\Int_Keyboard.c: 'P43': undefined identifier
+*** ERROR C202 IN LINE 40 OF .\src\Int\Int_Keyboard.c: 'P43': undefined identifier
+*** ERROR C202 IN LINE 43 OF .\src\Int\Int_Keyboard.c: 'P43': undefined identifier
+*** ERROR C202 IN LINE 53 OF .\src\Int\Int_Keyboard.c: 'P32': undefined identifier
+*** ERROR C202 IN LINE 58 OF .\src\Int\Int_Keyboard.c: 'P32': undefined identifier
+*** ERROR C202 IN LINE 64 OF .\src\Int\Int_Keyboard.c: 'P32': undefined identifier
+*** ERROR C202 IN LINE 67 OF .\src\Int\Int_Keyboard.c: 'P32': undefined identifier
+*** ERROR C202 IN LINE 77 OF .\src\Int\Int_Keyboard.c: 'P33': undefined identifier
+*** ERROR C202 IN LINE 82 OF .\src\Int\Int_Keyboard.c: 'P33': undefined identifier
+*** ERROR C202 IN LINE 88 OF .\src\Int\Int_Keyboard.c: 'P33': undefined identifier
+*** ERROR C202 IN LINE 91 OF .\src\Int\Int_Keyboard.c: 'P33': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  16 ERROR(S)
+
+[2025-04-18 15:33:35]	[done]
+	build successfully !
+
+[2025-04-18 15:35:33]	[done]
+	build successfully !
+
+[2025-04-18 16:56:11]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5xRC.H'
+*** ERROR C202 IN LINE 6 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 7 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 8 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 16:56:32]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5xRC.H'
+*** ERROR C202 IN LINE 6 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 7 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 8 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 16:56:41]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5XRC.H'
+*** ERROR C202 IN LINE 6 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 7 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 8 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 16:57:08]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5XRC.H'
+*** ERROR C202 IN LINE 6 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 7 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 8 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 16:57:19]	compilation failed at : "e:\嵌入式\projects\P12_独立按键左右移案例\src\Int\Int_Digtal.c", exit code: 2
+command: 
+  "E:\Program Files\Keil_v5\C51\BIN\C51.exe" .\src\Int\Int_Digtal.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\build\Release\.obj\src\Int\Int_Digtal.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC) DEFINE(__UVISION_VERSION='526') OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Int\Int_Digtal.o)
+   at unify_builder.Program.Main(String[] args_)
+---
+C51 COMPILER V9.60.7.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 2012 - 2022 ARM Limited or its Affiliates. All rights reserved.
+*** WARNING C318 IN LINE 4 OF .\src\Int\Int_Digtal.h: can't open file 'STC89C5xRC.H'
+*** ERROR C202 IN LINE 6 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+*** ERROR C202 IN LINE 7 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 8 OF .\src\Int\Int_Digtal.c: 'P1': undefined identifier
+*** ERROR C202 IN LINE 10 OF .\src\Int\Int_Digtal.c: 'P0': undefined identifier
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  4 ERROR(S)
+
+[2025-04-18 16:57:41]	[done]
+	build successfully !
+
+[2025-04-19 13:02:48]	[done]
+	build successfully !
+
+[2025-04-19 13:03:41]	[done]
+	build successfully !
+
+[2025-04-19 13:04:37]	[done]
+	build successfully !
+
+[2025-04-19 13:04:59]	[done]
+	build successfully !
+
+[2025-04-19 13:05:25]	[done]
+	build successfully !
+
