@@ -1,4 +1,4 @@
-LX51 LINKER/LOCATER V4.66.100.0                                                         04/19/2025  19:54:49  PAGE 1
+LX51 LINKER/LOCATER V4.66.100.0                                                         04/19/2025  19:57:26  PAGE 1
 
 
 LX51 LINKER/LOCATER V4.66.100.0, INVOKED BY:
@@ -34,7 +34,7 @@ ACTIVE MEMORY CLASSES OF MODULE:  .\BUILD\RELEASE\P14_�ⲿ�ж� (COM_UTIL)
 
 BASE        START       END         USED      MEMORY CLASS
 ==========================================================
-C:000000H   C:000000H   C:00FFFFH   00018DH   CODE
+C:000000H   C:000000H   C:00FFFFH   0001A5H   CODE
 I:000000H   I:000000H   I:00007FH   00001AH   DATA
 I:000000H   I:000000H   I:0000FFH   000001H   IDATA
 
@@ -55,19 +55,19 @@ START     STOP      LENGTH    ALIGN  RELOC    MEMORY CLASS   SEGMENT NAME
 000003H   000005H   000003H   BYTE   OFFS..   CODE           ?DRI_INTERRUPT?00003
 000006H   0000E4H   0000DFH   BYTE   UNIT     CODE           ?C?LIB_CODE
 0000E5H   000170H   00008CH   BYTE   UNIT     CODE           ?C_C51STARTUP
-000171H   00017DH   00000DH   BYTE   UNIT     CODE           ?C_INITSEG
-00017EH   000184H   000007H   BYTE   UNIT     CODE           ?PR?DRI_INTERRUPT_INIT?DRI_INTERRUPT
-000185H   000189H   000005H   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
-00018AH   00018CH   000003H   BYTE   UNIT     CODE           ?PR?DRI_INTERRUPT_FUNC?DRI_INTERRUPT
+000171H   000181H   000011H   BYTE   UNIT     CODE           ?PR?_DELAY10MS?COM_UTIL
+000182H   00018EH   00000DH   BYTE   UNIT     CODE           ?C_INITSEG
+00018FH   00019AH   00000CH   BYTE   UNIT     CODE           ?PR?MAIN?MAIN
+00019BH   0001A1H   000007H   BYTE   UNIT     CODE           ?PR?DRI_INTERRUPT_INIT?DRI_INTERRUPT
+0001A2H   0001A4H   000003H   BYTE   UNIT     CODE           ?PR?DRI_INTERRUPT_FUNC?DRI_INTERRUPT
 
 * * * * * * * * *   R E M O V E D     S E G M E N T S   * * * * * * * *
-   *DEL*:           000011H   BYTE   UNIT     CODE           ?PR?_DELAY10MS?COM_UTIL
    *DEL*:           000011H   BYTE   UNIT     CODE           ?PR?_INT_DIGTAL_DISPLAYSINGLE?INT_DIGTAL
    *DEL*:           000082H   BYTE   UNIT     CODE           ?PR?_INT_DIGTAL_SETCACHE?INT_DIGTAL
    *DEL*:           000005H   BYTE   UNIT     DATA           ?DT?_INT_DIGTAL_SETCACHE?INT_DIGTAL
    *DEL*:           000012H   BYTE   UNIT     CODE           ?PR?INT_DIGTAL_FLUSHDIGTAL?INT_DIGTAL
 
-LX51 LINKER/LOCATER V4.66.100.0                                                       04/19/2025  19:54:49  PAGE 2
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/19/2025  19:57:26  PAGE 2
 
 
 
@@ -88,8 +88,11 @@ DRI_INTERRUPT_FUNC/DRI_INTERRUPT          ----- -----  ----- -----
 
 MAIN/MAIN                                 ----- -----  ----- -----
   +--> DRI_INTERRUPT_INIT/DRI_INTERRUPT
+  +--> _DELAY10MS/COM_UTIL
 
 DRI_INTERRUPT_INIT/DRI_INTERRUPT          ----- -----  ----- -----
+
+_DELAY10MS/COM_UTIL                       ----- -----  ----- -----
 
 ?C_INITSEG                                ----- -----  ----- -----
 
@@ -106,11 +109,11 @@ PUBLIC SYMBOLS OF MODULE:  .\BUILD\RELEASE\P14_�ⲿ�ж� (COM_UTIL)
       00000000H   NUMBER   ---       ?C?XDATASEG
       0100012CH   CODE     ---       ?C_START
       01000000H   CODE     ---       ?C_STARTUP
-*DEL*:00000000H   CODE     ---       _Delay10ms
+      01000171H   CODE     ---       _Delay10ms
 *DEL*:00000000H   CODE     ---       _Int_Digtal_SetCache
-      0100017EH   CODE     ---       Dri_Interrupt_Init
+      0100019BH   CODE     ---       Dri_Interrupt_Init
 *DEL*:00000000H   CODE     ---       Int_Digtal_FlushDigtal
-      01000185H   CODE     ---       main
+      0100018FH   CODE     ---       main
 
 
 
@@ -119,28 +122,34 @@ SYMBOL TABLE OF MODULE:  .\BUILD\RELEASE\P14_�ⲿ�ж� (COM_UTIL)
       VALUE       REP       CLASS    TYPE      SYMBOL NAME
       ====================================================
       ---         MODULE    ---      ---       COM_UTIL
+      01000171H   PUBLIC    CODE     ---       _Delay10ms
+
+      01000171H   BLOCK     CODE     ---       LVL=0
+      01000171H   BLOCK     CODE     NEAR LAB  LVL=1
       00000006H   SYMBOL    DATA     VOID      i
       00000005H   SYMBOL    DATA     VOID      j
-
-      ---         MODULE    ---      ---       DRI_INTERRUPT
-      0100017EH   PUBLIC    CODE     ---       Dri_Interrupt_Init
-
-      0100017EH   BLOCK     CODE     ---       LVL=0
+      ---         BLOCKEND  ---      ---       LVL=1
       ---         BLOCKEND  ---      ---       LVL=0
 
-      0100018AH   BLOCK     CODE     ---       LVL=0
+      ---         MODULE    ---      ---       DRI_INTERRUPT
+      0100019BH   PUBLIC    CODE     ---       Dri_Interrupt_Init
+
+      0100019BH   BLOCK     CODE     ---       LVL=0
+LX51 LINKER/LOCATER V4.66.100.0                                                       04/19/2025  19:57:26  PAGE 3
+
+
+      ---         BLOCKEND  ---      ---       LVL=0
+
+      010001A2H   BLOCK     CODE     ---       LVL=0
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       INT_DIGTAL
       00000006H   SYMBOL    DATA     VOID      i
 
       ---         MODULE    ---      ---       MAIN
-LX51 LINKER/LOCATER V4.66.100.0                                                       04/19/2025  19:54:49  PAGE 3
+      0100018FH   PUBLIC    CODE     ---       main
 
-
-      01000185H   PUBLIC    CODE     ---       main
-
-      01000185H   BLOCK     CODE     ---       LVL=0
+      0100018FH   BLOCK     CODE     ---       LVL=0
       ---         BLOCKEND  ---      ---       LVL=0
 
       ---         MODULE    ---      ---       ?C_STARTUP
@@ -155,5 +164,5 @@ SYMBOL TABLE OF MODULE:  .\BUILD\RELEASE\P14_�ⲿ�ж� (COM_UTIL)
       ---         MODULE    ---      ---       ?C_INIT
       0100012CH   PUBLIC    CODE     ---       ?C_START
 
-Program Size: data=27.0 xdata=0 const=0 code=397
+Program Size: data=27.0 xdata=0 const=0 code=421
 LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

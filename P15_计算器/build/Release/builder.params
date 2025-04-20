@@ -13,6 +13,8 @@
     "incDirs": [
         "../../../Program Files/Keil_v5/C51/INC",
         "src",
+        "src/Com",
+        "src/Dri",
         "src/Int"
     ],
     "libDirs": [],
@@ -20,7 +22,10 @@
         "__UVISION_VERSION=526"
     ],
     "sourceList": [
+        "src/Com/Com_Util.c",
+        "src/Dri/Dri_Interrupt.c",
         "src/Int/Int_Digtal.c",
+        "src/Int/Int_MatrixKey.c",
         "src/main.c"
     ],
     "sourceParams": {},

@@ -14,8 +14,8 @@
         "../../../Program Files/Keil_v5/C51/INC",
         "src",
         "src/Int",
-        "src/Com",
-        "src/Dri"
+        "src/Dri",
+        "src/Com"
     ],
     "libDirs": [],
     "defines": [
