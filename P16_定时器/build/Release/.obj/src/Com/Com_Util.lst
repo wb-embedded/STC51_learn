@@ -1,0 +1,90 @@
+C51 COMPILER V9.60.7.0   COM_UTIL                                                          04/20/2025 22:34:08 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE COM_UTIL
+OBJECT MODULE PLACED IN .\build\Release\.obj\src\Com\Com_Util.o
+COMPILER INVOKED BY: E:\Program Files\Keil_v5\C51\BIN\C51.exe .\src\Com\Com_Util.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRIN
+                    -T(.\build\Release\.obj\src\Com\Com_Util.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC;src;src/Int;src/Com;src/Dri) 
+                    -DEFINE(__UVISION_VERSION=526) OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\Com\Com_Util.o)
+
+line level    source
+
+   1          #include "Com_Util.h"
+   2          
+   3          void Delay10ms(unsigned char ms)        //@11.0592MHz
+   4          {
+   5   1          unsigned char data i, j;
+   6   1      
+   7   1          while(ms--)
+   8   1          {
+   9   2              i = 18;
+  10   2              j = 235;
+  11   2              do
+  12   2              {
+  13   3                  while (--j);
+  14   3              } while (--i);
+  15   2          }
+  16   1      }
+C51 COMPILER V9.60.7.0   COM_UTIL                                                          04/20/2025 22:34:08 PAGE 2   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION _Delay10ms (BEGIN)
+                                           ; SOURCE LINE # 3
+;---- Variable 'ms' assigned to Register 'R7' ----
+                                           ; SOURCE LINE # 4
+0000         ?C0001:
+                                           ; SOURCE LINE # 7
+0000 AE07              MOV     R6,AR7
+0002 1F                DEC     R7
+0003 EE                MOV     A,R6
+0004 600A              JZ      ?C0008
+                                           ; SOURCE LINE # 8
+                                           ; SOURCE LINE # 9
+;---- Variable 'i' assigned to Register 'R6' ----
+0006 7E12              MOV     R6,#012H
+                                           ; SOURCE LINE # 10
+;---- Variable 'j' assigned to Register 'R5' ----
+0008 7DEB              MOV     R5,#0EBH
+                                           ; SOURCE LINE # 12
+000A         ?C0006:
+                                           ; SOURCE LINE # 13
+000A DDFE              DJNZ    R5,?C0006
+                                           ; SOURCE LINE # 14
+000C DEFC              DJNZ    R6,?C0006
+                                           ; SOURCE LINE # 15
+000E 80F0              SJMP    ?C0001
+                                           ; SOURCE LINE # 16
+0010         ?C0008:
+0010 22                RET     
+             ; FUNCTION _Delay10ms (END)
+
+C51 COMPILER V9.60.7.0   COM_UTIL                                                          04/20/2025 22:34:08 PAGE 3   
+
+NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
+====                                    =====   ======  ====    ======  ====
+
+
+_Delay10ms . . . . . . . . . . . . . .  PUBLIC   CODE   PROC     0000H  -----
+  ms . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0007H  1
+  i. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0006H  1
+  j. . . . . . . . . . . . . . . . . .  * REG *  DATA   U_CHAR   0005H  1
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     17    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+   EDATA SIZE       =   ----    ----
+   HDATA SIZE       =   ----    ----
+   XDATA CONST SIZE =   ----    ----
+   FAR CONST SIZE   =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

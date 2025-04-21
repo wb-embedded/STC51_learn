@@ -1558,3 +1558,231 @@ void main()
 
 
 ## Chapter 16 定时器
+
+时钟周期的时长取决于晶振频率
+
+```c
+#include "Dri_Time0.h"
+
+static unsigned int s_ms_count = 0;
+
+void Dri_Time0_Init()
+{
+    //总中断允许位
+    EA = 1;
+    //定时器0中断开关
+    ET0 = 1;
+    //设置TMOD
+    TMOD &= 0xF0;
+    TMOD |= 0x01;
+    //设置TR0
+    TR0 = 1;
+    //设置脉冲计数器初值,晶振频率和时长都会造成影响,1ms一次中断
+    TL0 = 64614 % 256;
+    TH0 = 64614 / 256;
+}
+
+static void Dri_Time0_Func() interrupt 1
+{
+    TL0 = 64614 % 256;
+    TH0 = 64614 / 256;
+
+    s_ms_count++;
+
+    if(s_ms_count == 1000)
+    {
+        P00 = ~P00;
+        s_ms_count = 0;
+    }
+}
+```
+
+主函数中只需要初始化定时器设置即可正常工作
+
+##### 加上回调函数
+
+首先需要在定时器中断中使用函数指针，
+
+##### typedef void (*CallbackFunction)(void);
+
+再定义一个函数指针数组用来存放需要调用的函数
+
+##### static CallbackFunction s_func[MAX_CALLBACK_SIZE];
+
+定义两个函数分别负责注册回调函数和取消注册回调函数，当定时器中断触发时，调用数组中的函数
+
+```c
+#include "Dri_Timer0.h"
+
+#define MAX_CALLBACK_SIZE 4
+
+static CallbackFunction s_func[MAX_CALLBACK_SIZE];
+
+void Dri_Timer0_Init()
+{
+    unsigned char i;
+    EA = 1;
+    ET0 = 1;
+    TMOD &= 0xF0;
+    TMOD |= 0x01;
+    TR0 = 1;
+    TL0 = 64614;
+    TH0 = 64614 >> 8;
+    for(i = 0; i < MAX_CALLBACK_SIZE; i++)
+    {
+        s_func[i] = NULL;
+    }
+}
+
+void Dri_Timer0_RegisterCallbackFunc(CallbackFunction func)
+{
+    unsigned char i;
+    //判断之前是否注册过
+    for(i = 0; i < MAX_CALLBACK_SIZE; i++)
+    {
+        if(s_func[i] == func)
+        {
+            return;
+        }
+    }
+    for(i = 0; i < MAX_CALLBACK_SIZE; i++)
+    {
+        if(s_func[i] == NULL)
+        {
+            s_func[i] = func;
+            return;
+        }
+    }
+}
+
+void Dri_Timer0_DeRegisterCallbackFunc(CallbackFunction func)
+{
+    unsigned char i;
+    //判断之前是否注册过
+    for(i = 0; i < MAX_CALLBACK_SIZE; i++)
+    {
+        if(s_func[i] == func)
+        {
+            s_func[i] = NULL;
+            return;
+        }
+    }
+}
+
+static void Dri_Timer0_Func() interrupt 1
+{
+    unsigned char i;
+    TL0 = 64614;
+    TH0 = 64614 >> 8;
+    for(i = 0; i < MAX_CALLBACK_SIZE; i++)
+    {
+        if(s_func[i] != NULL)
+        {
+            s_func[i]();
+        }
+    }
+}
+```
+
+
+
+## Chapter 17 定时器消抖
+
+用8位状态来表示当前按键是否按下，初始状态设置为***0xFF***，每间隔1ms读取一次当前状态，先左移一位再或上当前状态，若当前状态变成***0x00***，表示案件被按下，若当前状态变为***0xFF***，表示按键被抬起。
+
+##### 回调函数
+
+```c
+static void Int_Key_CallbackFunc()
+{
+    s_sw1_status <<= 1;
+    s_sw1_status |= P42;
+
+    s_sw2_status <<= 1;
+    s_sw2_status |= P43;
+
+    s_sw3_status <<= 1;
+    s_sw3_status |= P32;
+
+    s_sw4_status <<= 1;
+    s_sw4_status |= P33;
+}
+```
+
+##### 初始化函数
+
+```c
+// 1表示按下，2表示抬起，0表示与之前状态一致
+void Int_Key_Init()
+{
+    s_sw1_status = 0xFF;
+    s_sw2_status = 0xFF;
+    s_sw3_status = 0xFF;
+    s_sw4_status = 0xFF;
+
+    s_sw1_before_status = 2;
+    s_sw2_before_status = 2;
+    s_sw3_before_status = 2;
+    s_sw4_before_status = 2;
+
+    Dri_Timer0_RegisterCallbackFunc(Int_Key_CallbackFunc);
+}
+```
+
+##### 获取当前按键状态
+
+```c
+// 1表示按下，2表示抬起，0表示与之前状态一致
+unsigned char Int_Key_GetSw1Status()
+{
+    if (s_sw1_before_status == 2 && s_sw1_status == 0x00) {
+        s_sw1_before_status = 1;
+        return 1;
+    }
+    if (s_sw1_before_status == 1 && s_sw1_status == 0xFF) {
+        s_sw1_before_status = 2;
+        return 2;
+    }
+    return 0;
+}
+
+unsigned char Int_Key_GetSw2Status()
+{
+    if (s_sw2_before_status == 2 && s_sw2_status == 0x00) {
+        s_sw2_before_status = 1;
+        return 1;
+    }
+    if (s_sw2_before_status == 1 && s_sw2_status == 0xFF) {
+        s_sw2_before_status = 2;
+        return 2;
+    }
+    return 0;
+}
+
+unsigned char Int_Key_GetSw3Status()
+{
+    if (s_sw3_before_status == 2 && s_sw3_status == 0x00) {
+        s_sw3_before_status = 1;
+        return 1;
+    }
+    if (s_sw3_before_status == 1 && s_sw3_status == 0xFF) {
+        s_sw3_before_status = 2;
+        return 2;
+    }
+    return 0;
+}
+
+unsigned char Int_Key_GetSw4Status()
+{
+    if (s_sw4_before_status == 2 && s_sw4_status == 0x00) {
+        s_sw4_before_status = 1;
+        return 1;
+    }
+    if (s_sw4_before_status == 1 && s_sw4_status == 0xFF) {
+        s_sw4_before_status = 2;
+        return 2;
+    }
+    return 0;
+}
+```
+
