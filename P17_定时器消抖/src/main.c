@@ -7,10 +7,10 @@ void main()
     Dri_Timer0_Init();
     Int_Key_Init();
     while (1) {
-        if (Int_Key_GetSw1Status() == 1) {
+        if (Int_Key_GetSw1Status() == 2) {
             P00 = ~P00;
         }
-        if (Int_Key_GetSw2Status() == 1) {
+        if (Int_Key_GetSw2Status() == 2) {
             P01 = ~P01;
         }
         if (Int_Key_GetSw3Status() == 1) {

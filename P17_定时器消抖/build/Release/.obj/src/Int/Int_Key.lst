@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 1   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE INT_KEY
@@ -62,7 +62,7 @@ line level    source
   51          unsigned char Int_Key_GetSw2Status()
   52          {
   53   1          if (s_sw2_before_status == 2 && s_sw2_status == 0x00) {
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 2   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 2   
 
   54   2              s_sw2_before_status = 1;
   55   2              return 1;
@@ -99,7 +99,7 @@ line level    source
   86   2          }
   87   1          return 0;
   88   1      }
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 3   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 3   
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -163,7 +163,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 30
 000F 750002      R     MOV     s_sw2_before_status,#02H
                                            ; SOURCE LINE # 31
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 4   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 4   
 
 0012 750002      R     MOV     s_sw3_before_status,#02H
                                            ; SOURCE LINE # 32
@@ -227,7 +227,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 57
 000F E500        R     MOV     A,s_sw2_before_status
 0011 B4010B            CJNE    A,#01H,?C0008
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 5   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 5   
 
 0014 E500        R     MOV     A,s_sw2_status
 0016 B4FF06            CJNE    A,#0FFH,?C0008
@@ -291,7 +291,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0009 750001      R     MOV     s_sw4_before_status,#01H
                                            ; SOURCE LINE # 81
 000C 7F01              MOV     R7,#01H
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 6   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 6   
 
 000E 22                RET     
                                            ; SOURCE LINE # 82
@@ -315,7 +315,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0021 22                RET     
              ; FUNCTION Int_Key_GetSw4Status (END)
 
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 7   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 7   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -378,7 +378,7 @@ P31. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B1H  1
 P22. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A2H  1
 P13. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0093H  1
 P04. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0084H  1
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 8   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 8   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -441,7 +441,7 @@ TH2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CDH  1
 P. . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D0H  1
 s_sw1_before_status. . . . . . . . . .  STATIC   DATA   U_CHAR   0000H  1
 SM0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009FH  1
-C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:39:55 PAGE 9   
+C51 COMPILER V9.60.7.0   INT_KEY                                                           04/21/2025 21:51:24 PAGE 9   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====

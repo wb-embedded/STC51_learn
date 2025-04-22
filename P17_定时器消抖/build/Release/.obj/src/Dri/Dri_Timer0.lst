@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 1   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE DRI_TIMER0
@@ -62,7 +62,7 @@ line level    source
   51          {
   52   1          unsigned char i;
   53   1          TL0 = 64614;
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 2   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 2   
 
   54   1          TH0 = 64614 >> 8;
   55   1      
@@ -71,7 +71,7 @@ line level    source
   58   2                  s_func[i]();
   59   2          }
   60   1      }
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 3   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 3   
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -135,7 +135,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 000D 2400        R     ADD     A,#LOW s_func
 000F F8                MOV     R0,A
 0010 8603              MOV     AR3,@R0
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 4   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 4   
 
 0012 08                INC     R0
 0013 E6                MOV     A,@R0
@@ -199,7 +199,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 005C BF04D4            CJNE    R7,#04H,?C0010
                                            ; SOURCE LINE # 35
 005F         ?C0009:
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 5   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 5   
 
 005F 22                RET     
              ; FUNCTION _Dri_Timer0_RegisterCallbackFunc (END)
@@ -263,7 +263,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
              ; FUNCTION _Dri_Timer0_DeRegisterCallbackFunc (END)
 
              ; FUNCTION Dri_Timer0_func (BEGIN)
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 6   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 6   
 
 0000 C0E0              PUSH    ACC
 0002 C0F0              PUSH    B
@@ -327,7 +327,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 0055 D007              POP     AR7
 0057 D006              POP     AR6
 0059 D005              POP     AR5
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 7   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 7   
 
 005B D004              POP     AR4
 005D D003              POP     AR3
@@ -342,7 +342,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 006F 32                RETI    
              ; FUNCTION Dri_Timer0_func (END)
 
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 8   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 8   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -405,7 +405,7 @@ P02. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0082H  1
 ISP_ADDRH. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E3H  1
 P30. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B0H  1
 P21. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A1H  1
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 9   
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 9   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -468,7 +468,7 @@ TH1. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   008DH  1
 TB8. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009BH  1
 EX1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00AAH  1
 IT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008AH  1
-C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:39:55 PAGE 10  
+C51 COMPILER V9.60.7.0   DRI_TIMER0                                                        04/21/2025 21:51:23 PAGE 10  
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
