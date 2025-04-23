@@ -13,8 +13,8 @@
     "incDirs": [
         "../../../Program Files/Keil_v5/C51/INC",
         "src",
-        "src/Dri",
-        "src/Int"
+        "src/Int",
+        "src/Dri"
     ],
     "libDirs": [],
     "defines": [

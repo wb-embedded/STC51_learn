@@ -11,6 +11,6 @@
 #define SCK          P12
 
 void Int_MatrixLED_Init();
-void Int_MatrixLed_Move(unsigned char pics);
+void Int_MatrixLED_SetPics(unsigned char *pics);
 
 #endif

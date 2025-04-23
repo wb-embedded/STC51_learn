@@ -1786,3 +1786,673 @@ unsigned char Int_Key_GetSw4Status()
 }
 ```
 
+
+
+## Chapter 18 点阵屏
+
+需要设置P35引脚为使能端，低电平有效
+
+##### 代码如下
+
+```
+#ifndef __INT_MATRIXLED_H__
+#define __INT_MATRIXLED_H__
+
+#include "STC89C5xRC.H"
+
+#define SER P10
+#define RCK P11
+#define SCK P12
+#define LED_MATRIX_EN P35
+#define LED_EN        P34
+
+void Int_MatrixLed_SetCache(unsigned char *pics);
+void Int_MatrixLed_Flush();
+
+#endif
+```
+
+```
+#include "Int_MatrixLed.h"
+
+static unsigned char s_pics[8];
+
+void Int_MatrixLed_SetCache(unsigned char *pics)
+{
+    unsigned char i;
+
+    for (i = 0; i < 8; i++) {
+        s_pics[i] = pics[i];
+    }
+}
+
+void Int_MatrixLed_Flush()
+{
+    unsigned char i;
+    for (i = 0; i < 8; i++) {
+        P0 = 0xFF;
+        if (i == 0)
+            SER = 1;
+        else {
+            SER = 0;
+        }
+        SCK = 0;
+        SCK = 1;
+        RCK = 0;
+        RCK = 1;
+        P0  = ~s_pics[i];
+    }
+}
+```
+
+
+
+## Chapter 19 点阵屏移动
+
+注意要做到将点阵屏移动，需要将显示代码一行行移进显示模块，但是当刷新过快时，可能无法正常显示，需要将显示模块多进行几次
+
+```
+#ifndef __INT_MATRIXLED_H__
+#define __INT_MATRIXLED_H__
+
+#include "STC89C5xRC.H"
+
+#define MATRIX_LED_EN P35
+#define LED_EN        P34
+#define SER           P10
+#define RCK           P11
+#define SCK           P12
+
+void Int_MatrixLed_Flush();
+
+void Int_MatrixLed_Move(unsigned char pics);
+
+#endif
+```
+
+```
+#include "Int_MatrixLed.h"
+
+static unsigned char s_pics[8];
+
+void Int_MatrixLed_Move(unsigned char pics)
+{
+    unsigned char i;
+    for (i = 7; i > 0; i--) {
+        s_pics[i] = s_pics[i - 1];
+    }
+    s_pics[i] = pics;
+}
+
+void Int_MatrixLed_Flush()
+{
+    unsigned char i;
+    for (i = 0; i < 8; i++) {
+        P0 = 0xFF;
+        if (i == 0) {
+            SER = 1;
+        } else {
+            SER = 0;
+        }
+        SCK = 0;
+        SCK = 1;
+        RCK = 0;
+        RCK = 1;
+
+        P0 = ~s_pics[i];
+    }
+}
+```
+
+```
+#include "STC89C5XRC.H"
+#include "Int_MatrixLed.h"
+
+unsigned char pics[26] = {0xF8, 0x0A, 0xEC, 0xAF, 0xEC, 0x8A, 0xF8, 0x00,
+                          0x10, 0xF9, 0x97, 0xF1, 0x88, 0xAA, 0xFF, 0xAA,
+                          0x88, 0x00, 0x14, 0x0A, 0xF5, 0x92, 0x92, 0xF5,
+                          0x0A, 0x14};
+
+void main()
+{
+    unsigned int i = 0, j;
+    MATRIX_LED_EN   = 0;
+    LED_EN          = 0;
+    while (1) {
+        j = 0;
+        if (i < 26) {
+            Int_MatrixLed_Move(pics[i]);
+        } else if (i >= 26 && i < 30) {
+            Int_MatrixLed_Move(0x00);
+        } else {
+            i = 0;
+        }
+        while (j < 1000) {
+            Int_MatrixLed_Flush();
+            j++;
+        }
+        i++;
+    }
+}
+
+```
+
+
+
+## Chapter 20 点阵屏移动中断版
+
+```
+#ifndef __INT_MATRIXLED_H__
+#define __INT_MATRIXLED_H__
+
+#include "STC89C5xRC.H"
+#include "Dri_Timer0.h"
+
+#define MATRIXLED_EN P35 // 低电平有效
+#define LED_EN       P34 // 高电平有效
+#define SER          P10
+#define RCK          P11
+#define SCK          P12
+
+void Int_MatrixLED_Init();
+void Int_MatrixLed_Move(unsigned char pics);
+
+#endif
+```
+
+##### 回调函数一次只刷新一行，用全局变量记录当前刷新行数
+
+```
+#include "Int_MatrixLED.h"
+
+static unsigned char s_pics[8];
+static unsigned char s_current_line;
+
+void Int_MatrixLed_Move(unsigned char pics)
+{
+    unsigned char i;
+    for (i = 7; i > 0; i--) {
+        s_pics[i] = s_pics[i - 1];
+    }
+    s_pics[0] = pics;
+}
+
+static void Int_MatrixLED_CallbackFlush()
+{
+    P0 = 0xFF;
+    if (s_current_line == 0) {
+        SER = 1;
+    } else {
+        SER = 0;
+    }
+
+    SCK = 0;
+    SCK = 1;
+    RCK = 0;
+    RCK = 1;
+
+    P0 = ~s_pics[s_current_line];
+
+    s_current_line++;
+
+    if (s_current_line >= 8) {
+        s_current_line = 0;
+    }
+}
+
+void Int_MatrixLED_Init()
+{
+    s_current_line = 0;
+    MATRIXLED_EN   = 0;
+    LED_EN         = 0;
+    // Dri_Timer0_RegisterCallbackFunc(Int_MatrixLED_CallbackMove);
+    Dri_Timer0_RegisterCallbackFunc(Int_MatrixLED_CallbackFlush);
+}
+```
+
+```
+#include "STC89C5XRC.H"
+#include "Dri_Timer0.h"
+#include "Int_MatrixLED.h"
+#include "Com_Util.h"
+
+unsigned char pics[26] = {0xF8, 0x0A, 0xEC, 0xAF, 0xEC, 0x8A, 0xF8, 0x00,
+                          0x10, 0xF9, 0x97, 0xF1, 0x88, 0xAA, 0xFF, 0xAA,
+                          0x88, 0x00, 0x14, 0x0A, 0xF5, 0x92, 0x92, 0xF5,
+                          0x0A, 0x14};
+
+void main()
+{
+    unsigned char i = 0;
+    Dri_Timer0_Init();
+    Int_MatrixLED_Init();
+    while (1) {
+        if (i < 26) {
+            Int_MatrixLed_Move(pics[i]);
+        } else if (i >= 26 && i < 30) {
+            Int_MatrixLed_Move(0x00);
+        }
+        i++;
+        if (i >= 30) {
+            i = 0;
+        }
+        Delay1ms(500);
+    }
+}
+
+```
+
+
+
+## Chapter 21 点阵屏动画
+
+只需要每次传入8个数据，占满整个点阵屏，再刷新显示即可
+
+```
+#ifndef __INT_MATRIXLED_H__
+#define __INT_MATRIXLED_H__
+
+#include "STC89C5xRC.H"
+#include "Dri_Timer0.h"
+
+#define MATRIXLED_EN P35 // 低电平有效
+#define LED_EN       P34 // 高电平有效
+#define SER          P10
+#define RCK          P11
+#define SCK          P12
+
+void Int_MatrixLED_Init();
+void Int_MatrixLED_SetPics(unsigned char *pics);
+
+#endif
+```
+
+```
+#include "Int_MatrixLED.h"
+
+static unsigned char s_pics[8];
+static unsigned char s_current_line;
+
+static void Int_MatrixLED_CallbackFlush()
+{
+    P0 = 0xFF;
+    if (s_current_line == 0) {
+        SER = 1;
+    } else {
+        SER = 0;
+    }
+
+    SCK = 0;
+    SCK = 1;
+    RCK = 0;
+    RCK = 1;
+
+    P0 = ~s_pics[s_current_line];
+
+    s_current_line++;
+
+    if (s_current_line >= 8) {
+        s_current_line = 0;
+    }
+}
+
+void Int_MatrixLED_Init()
+{
+    s_current_line = 0;
+    MATRIXLED_EN   = 0;
+    LED_EN         = 0;
+    // Dri_Timer0_RegisterCallbackFunc(Int_MatrixLED_CallbackMove);
+    Dri_Timer0_RegisterCallbackFunc(Int_MatrixLED_CallbackFlush);
+}
+
+void Int_MatrixLED_SetPics(unsigned char *pics)
+{
+    unsigned char i;
+    for (i = 0; i < 8; i++) {
+        s_pics[i] = pics[i];
+    }
+}
+```
+
+```
+#include "STC89C5XRC.H"
+#include "Dri_Timer0.h"
+#include "Int_MatrixLED.h"
+#include "Com_Util.h"
+
+unsigned char pics[32] = {0x00, 0x00, 0x00, 0x18, 0x18, 0x00, 0x00, 0x00,
+                          0x00, 0x00, 0x3C, 0x24, 0x24, 0x3C, 0x00, 0x00,
+                          0x00, 0x7E, 0x42, 0x42, 0x42, 0x42, 0x7E, 0x00,
+                          0xFF, 0x81, 0x81, 0x81, 0x81, 0x81, 0x81, 0xFF};
+
+void main()
+{
+    unsigned char i = 0;
+    Dri_Timer0_Init();
+    Int_MatrixLED_Init();
+    while (1) {
+        Int_MatrixLED_SetPics(pics + i);
+        i += 8; // 每次移动8位，即每次移动一个屏幕大小
+        Delay1ms(100);
+        if (i == 32) {
+            i = 0;
+        }
+    }
+}
+```
+
+
+
+## Chapter 22 蜂鸣器
+
+通过按键控制蜂鸣器发出不同的声音
+
+需要用到之前的定时器消抖模块，按键模块，延时模块
+
+```
+#ifndef __COM_UTIL_H__
+#define __COM_UTIL_H__
+
+#include "INTRINS.H"
+
+void Delay1ms(unsigned char ms);
+
+void Delay10us(unsigned char ms);
+
+#endif
+```
+
+```
+#include "Com_Util.h"
+
+void Delay1ms(unsigned char ms) //@11.0592MHz
+{
+    unsigned char data i, j;
+
+    while (ms--) {
+        _nop_();
+        i = 2;
+        j = 199;
+        do {
+            while (--j);
+        } while (--i);
+    }
+}
+
+void Delay10us(unsigned char ms) //@11.0592MHz
+{
+    unsigned char data i;
+
+    while (ms--) {
+        i = 2;
+        while (--i);
+    }
+}
+```
+
+```
+#ifndef __DRI_TIMER0_H__
+#define __DRI_TIMER0_H__
+
+#include "STC89C5xRC.H"
+#include "STDIO.H"
+
+#define MAX_CALLBACK_COUNT 4
+
+typedef void (*Callback)(void);
+
+void Dri_Timer0_Init();
+
+void Dri_Timer0_Register(Callback func);
+
+void Dri_Timer0_DeRegister(Callback func);
+
+#endif
+```
+
+```
+#include "Dri_Timer0.h"
+
+static Callback s_func[MAX_CALLBACK_COUNT];
+
+void Dri_Timer0_Init()
+{
+    unsigned char i;
+    EA  = 1;
+    ET0 = 1;
+    TMOD &= 0xF0;
+    TMOD |= 0x01;
+    TL0 = 64614;
+    TH0 = 64614 >> 8;
+    TR0 = 1;
+    for (i = 0; i < MAX_CALLBACK_COUNT; i++) {
+        s_func[i] = NULL;
+    }
+}
+
+void Dri_Timer0_Register(Callback func)
+{
+    unsigned char i;
+    for (i = 0; i < MAX_CALLBACK_COUNT; i++) {
+        if (s_func[i] == func) {
+            return;
+        }
+    }
+    for (i = 0; i < MAX_CALLBACK_COUNT; i++) {
+        if (s_func[i] == NULL) {
+            s_func[i] = func;
+            return;
+        }
+    }
+}
+
+void Dri_Timer0_DeRegister(Callback func)
+{
+    unsigned char i;
+    for (i = 0; i < MAX_CALLBACK_COUNT; i++) {
+        if (s_func[i] == func) {
+            s_func[i] = NULL;
+            return;
+        }
+    }
+}
+
+static void Dri_Timer0_Func() interrupt 1
+{
+    unsigned char i;
+    TL0 = 64614;
+    TH0 = 64614 >> 8;
+
+    for (i = 0; i < MAX_CALLBACK_COUNT; i++) {
+        if (s_func[i] != NULL) {
+            s_func[i]();
+        }
+    }
+}
+```
+
+```
+#ifndef __INT_KEY_H__
+#define __INT_KEY_H__
+
+#include "Dri_Timer0.h"
+
+#define SW3 P42
+#define SW4 P43
+#define SW5 P32
+#define SW6 P33
+
+void Int_Key_Init();
+unsigned char Int_Key_GetSw3Status();
+unsigned char Int_Key_GetSw4Status();
+unsigned char Int_Key_GetSw5Status();
+unsigned char Int_Key_GetSw6Status();
+
+#endif
+```
+
+```
+#include "Int_Key.h"
+
+unsigned char s_sw3_status, s_sw4_status, s_sw5_status, s_sw6_status;
+unsigned char s_sw3_before_status, s_sw4_before_status, s_sw5_before_status, s_sw6_before_status;
+
+static void Int_Key_CallbackFunc()
+{
+    s_sw3_status <<= 1;
+    s_sw3_status |= SW3;
+
+    s_sw4_status <<= 1;
+    s_sw4_status |= SW4;
+
+    s_sw5_status <<= 1;
+    s_sw5_status |= SW5;
+
+    s_sw6_status <<= 1;
+    s_sw6_status |= SW6;
+}
+
+void Int_Key_Init()
+{
+    s_sw3_status = 0xFF;
+    s_sw4_status = 0xFF;
+    s_sw5_status = 0xFF;
+    s_sw6_status = 0xFF;
+
+    s_sw3_before_status = 2;
+    s_sw4_before_status = 2;
+    s_sw5_before_status = 2;
+    s_sw6_before_status = 2;
+
+    Dri_Timer0_Register(Int_Key_CallbackFunc);
+}
+
+unsigned char Int_Key_GetSw3Status()
+{
+    if(s_sw3_before_status == 2 && s_sw3_status == 0x00)
+    {
+        s_sw3_before_status = 1;
+        return 1;
+    }
+    if(s_sw3_before_status == 1 && s_sw3_status == 0xFF)
+    {
+        s_sw3_before_status = 2;
+        return 2;
+    }
+    return 0;
+}
+
+unsigned char Int_Key_GetSw4Status()
+{
+    if (s_sw4_before_status == 2 && s_sw4_status == 0x00) {
+        s_sw4_before_status = 1;
+        return 1;
+    }
+    if (s_sw4_before_status == 1 && s_sw4_status == 0xFF) {
+        s_sw4_before_status = 2;
+        return 2;
+    }
+    return 0;
+}
+
+unsigned char Int_Key_GetSw5Status()
+{
+    if (s_sw5_before_status == 2 && s_sw5_status == 0x00) {
+        s_sw5_before_status = 1;
+        return 1;
+    }
+    if (s_sw5_before_status == 1 && s_sw5_status == 0xFF) {
+        s_sw5_before_status = 2;
+        return 2;
+    }
+    return 0;
+}
+
+unsigned char Int_Key_GetSw6Status()
+{
+    if (s_sw6_before_status == 2 && s_sw6_status == 0x00) {
+        s_sw6_before_status = 1;
+        return 1;
+    }
+    if (s_sw6_before_status == 1 && s_sw6_status == 0xFF) {
+        s_sw6_before_status = 2;
+        return 2;
+    }
+    return 0;
+}
+```
+
+```
+#include "STC89C5XRC.H"
+#include "Dri_Timer0.h"
+#include "Int_Key.h"
+#include "Com_Util.h"
+
+void do_func()
+{
+    P46 = ~P46;
+    Delay10us(24);
+}
+
+void re_func()
+{
+    P46 = ~P46;
+    Delay10us(21);
+}
+
+void mi_func()
+{
+    P46 = ~P46;
+    Delay10us(19);
+}
+
+void fa_func()
+{
+    P46 = ~P46;
+    Delay10us(17);
+}
+
+void main()
+{
+    Dri_Timer0_Init();
+    Int_Key_Init();
+    while (1) {
+        if (Int_Key_GetSw3Status() == 1) {
+            while (1) {
+                do_func();
+                if (Int_Key_GetSw3Status() == 2) {
+                    break;
+                }
+            }
+        }
+        if (Int_Key_GetSw4Status() == 1) {
+            while (1) {
+                re_func();
+                if (Int_Key_GetSw4Status() == 2) {
+                    break;
+                }
+            }
+        }
+        if (Int_Key_GetSw5Status() == 1) {
+            while (1) {
+                mi_func();
+                if (Int_Key_GetSw5Status() == 2) {
+                    break;
+                }
+            }
+        }
+        if (Int_Key_GetSw6Status() == 1) {
+            while (1) {
+                fa_func();
+                if (Int_Key_GetSw6Status() == 2) {
+                    break;
+                }
+            }
+        }
+    }
+}
+```
+
+
+
+## Chapter 23 串口通信

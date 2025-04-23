@@ -3,15 +3,6 @@
 static unsigned char s_pics[8];
 static unsigned char s_current_line;
 
-void Int_MatrixLed_Move(unsigned char pics)
-{
-    unsigned char i;
-    for (i = 7; i > 0; i--) {
-        s_pics[i] = s_pics[i - 1];
-    }
-    s_pics[0] = pics;
-}
-
 static void Int_MatrixLED_CallbackFlush()
 {
     P0 = 0xFF;
@@ -42,4 +33,12 @@ void Int_MatrixLED_Init()
     LED_EN         = 0;
     // Dri_Timer0_RegisterCallbackFunc(Int_MatrixLED_CallbackMove);
     Dri_Timer0_RegisterCallbackFunc(Int_MatrixLED_CallbackFlush);
+}
+
+void Int_MatrixLED_SetPics(unsigned char *pics)
+{
+    unsigned char i;
+    for (i = 0; i < 8; i++) {
+        s_pics[i] = pics[i];
+    }
 }
