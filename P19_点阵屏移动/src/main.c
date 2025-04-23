@@ -17,13 +17,15 @@ void main()
             Int_MatrixLed_Move(pics[i]);
         } else if (i >= 26 && i < 30) {
             Int_MatrixLed_Move(0x00);
-        } else {
-            i = 0;
         }
         while (j < 1000) {
             Int_MatrixLed_Flush();
             j++;
         }
         i++;
+        if(i >= 30)
+        {
+            i = 0;
+        }
     }
 }
