@@ -1,0 +1,14 @@
+>>> cc
+
+
+
+>>> ld
+
+
+LX51 LINKER/LOCATER V4.66.100.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 1995-2021, Arm Limited or its Affiliates. All rights reserved.
+@e:\«∂»Î Ω\projects\test02_µ„’Û∆¡\build\Release\P20_µ„’Û∆¡÷–∂œ∞Ê.lnp .\build\Release\.obj\src\Com\Com_Util.o,.\build\Release\.obj\src\Dri\Dri_Timer0.o,.\build\Release\.obj\src\Int\Int_MatrixLED.o,.\build\Release\.obj\src\main.o TO .\build\Release\P20_µ„’Û∆¡÷–∂œ∞Ê
+PRINT(.\build\Release\P20_µ„’Û∆¡÷–∂œ∞Ê.map) REMOVEUNUSED
+
+Program Size: data=67.0 xdata=0 const=0 code=634
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

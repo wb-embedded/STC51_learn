@@ -1,0 +1,2 @@
+.\build\Release\.obj\src\Int\Int_MatrixLed.o,.\build\Release\.obj\src\main.o TO .\build\Release\P18_点阵屏移动
+PRINT(.\build\Release\P18_点阵屏移动.map) REMOVEUNUSED

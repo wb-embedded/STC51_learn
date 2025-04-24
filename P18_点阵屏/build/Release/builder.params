@@ -1,0 +1,70 @@
+{
+    "name": "P17_点阵屏",
+    "target": "Release",
+    "toolchain": "Keil_C51",
+    "toolchainLocation": "E:\\Program Files\\Keil_v5\\C51",
+    "toolchainCfgFile": "c:\\Users\\Administrator\\.vscode\\extensions\\cl.eide-3.21.1\\res\\data\\models\\win32/8051.keil.model.json",
+    "buildMode": "normal|multhread",
+    "showRepathOnLog": true,
+    "threadNum": 12,
+    "rootDir": "e:\\嵌入式\\projects\\P17_点阵屏",
+    "dumpPath": "build\\Release",
+    "outDir": "build\\Release",
+    "incDirs": [
+        "../../../Program Files/Keil_v5/C51/INC",
+        "src",
+        "src/Int"
+    ],
+    "libDirs": [],
+    "defines": [
+        "__UVISION_VERSION=526"
+    ],
+    "sourceList": [
+        "src/Int/Int_MatrixLed.c",
+        "src/main.c"
+    ],
+    "sourceParams": {},
+    "options": {
+        "version": 2,
+        "beforeBuildTasks": [],
+        "afterBuildTasks": [],
+        "global": {
+            "ram-mode": "SMALL",
+            "rom-mode": "LARGE"
+        },
+        "c/cpp-compiler": {
+            "optimization-type": "SPEED",
+            "optimization-level": "level-8",
+            "optimization": "8,SPEED"
+        },
+        "asm-compiler": {},
+        "linker": {
+            "remove-unused": true,
+            "output-format": "elf"
+        }
+    },
+    "env": {
+        "workspaceFolder": "e:\\嵌入式\\projects\\P17_点阵屏",
+        "workspaceFolderBasename": "P17_点阵屏",
+        "OutDir": "e:\\嵌入式\\projects\\P17_点阵屏\\build\\Release",
+        "OutDirRoot": "build",
+        "OutDirBase": "build\\Release",
+        "ProjectName": "P17_点阵屏",
+        "ConfigName": "Release",
+        "ProjectRoot": "e:\\嵌入式\\projects\\P17_点阵屏",
+        "ExecutableName": "e:\\嵌入式\\projects\\P17_点阵屏\\build\\Release\\P17_点阵屏",
+        "ChipPackDir": "",
+        "ChipName": "",
+        "SYS_Platform": "win32",
+        "SYS_DirSep": "\\",
+        "SYS_DirSeparator": "\\",
+        "SYS_PathSep": ";",
+        "SYS_PathSeparator": ";",
+        "SYS_EOL": "\r\n",
+        "EIDE_BUILDER_DIR": "c:\\Users\\Administrator\\.vscode\\extensions\\cl.eide-3.21.1\\res\\tools\\win32\\unify_builder",
+        "EIDE_BINARIES_VER": "12.0.1",
+        "EIDE_MSYS": "C:\\Users\\Administrator\\.eide\\bin\\builder\\msys\\bin",
+        "ToolchainRoot": "E:\\Program Files\\Keil_v5\\C51"
+    },
+    "sysPaths": []
+}

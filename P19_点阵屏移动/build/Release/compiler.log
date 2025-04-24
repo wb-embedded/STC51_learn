@@ -1,0 +1,14 @@
+>>> cc
+
+
+
+>>> ld
+
+
+LX51 LINKER/LOCATER V4.66.100.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 1995-2021, Arm Limited or its Affiliates. All rights reserved.
+@e:\嵌入式\projects\P19_点阵屏移动\build\Release\P18_点阵屏移动.lnp .\build\Release\.obj\src\Int\Int_MatrixLed.o,.\build\Release\.obj\src\main.o TO .\build\Release\P18_点阵屏移动
+PRINT(.\build\Release\P18_点阵屏移动.map) REMOVEUNUSED
+
+Program Size: data=47.0 xdata=0 const=0 code=337
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
