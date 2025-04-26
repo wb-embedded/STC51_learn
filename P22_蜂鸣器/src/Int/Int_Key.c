@@ -35,13 +35,11 @@ void Int_Key_Init()
 
 unsigned char Int_Key_GetSw3Status()
 {
-    if(s_sw3_before_status == 2 && s_sw3_status == 0x00)
-    {
+    if (s_sw3_before_status == 2 && s_sw3_status == 0x00) {
         s_sw3_before_status = 1;
         return 1;
     }
-    if(s_sw3_before_status == 1 && s_sw3_status == 0xFF)
-    {
+    if (s_sw3_before_status == 1 && s_sw3_status == 0xFF) {
         s_sw3_before_status = 2;
         return 2;
     }

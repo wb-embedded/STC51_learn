@@ -1,10 +1,10 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              04/23/2025 22:18:44 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/25/2025 15:43:15 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN .\build\Release\.obj\src\main.o
 COMPILER INVOKED BY: E:\Program Files\Keil_v5\C51\BIN\C51.exe .\src\main.c OMF2 TABS(4) CODE NOCOND SYMBOLS PRINT(.\buil
-                    -d\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC;src;src/Com;src/Int;src/Dri) DEFINE(__UVISION
+                    -d\Release\.obj\src\main.lst) INCDIR(../../../Program Files/Keil_v5/C51/INC;src;src/Int;src/Dri;src/Com) DEFINE(__UVISION
                     -_VERSION=526) OPTIMIZE(8,SPEED) SMALL ROM(LARGE) OBJECT(.\build\Release\.obj\src\main.o)
 
 line level    source
@@ -44,43 +44,42 @@ line level    source
   33   1          Int_Key_Init();
   34   1          while (1) {
   35   2              if (Int_Key_GetSw3Status() == 1) {
-  36   3                  while(1){
+  36   3                  while (1) {
   37   4                      do_func();
-  38   4                      if(Int_Key_GetSw3Status() == 2)
-  39   4                      {
-  40   5                          break;
-  41   5                      }
-  42   4                  }
-  43   3              }
-  44   2              if (Int_Key_GetSw4Status() == 1) {
-  45   3                  while (1) {
-  46   4                      re_func();
-  47   4                      if (Int_Key_GetSw4Status() == 2) {
-  48   5                          break;
-  49   5                      }
-  50   4                  }
-  51   3              }
-  52   2              if (Int_Key_GetSw5Status() == 1) {
-  53   3                  while (1) {
-C51 COMPILER V9.60.7.0   MAIN                                                              04/23/2025 22:18:44 PAGE 2   
+  38   4                      if (Int_Key_GetSw3Status() == 2) {
+  39   5                          break;
+  40   5                      }
+  41   4                  }
+  42   3              }
+  43   2              if (Int_Key_GetSw4Status() == 1) {
+  44   3                  while (1) {
+  45   4                      re_func();
+  46   4                      if (Int_Key_GetSw4Status() == 2) {
+  47   5                          break;
+  48   5                      }
+  49   4                  }
+  50   3              }
+  51   2              if (Int_Key_GetSw5Status() == 1) {
+  52   3                  while (1) {
+  53   4                      mi_func();
+C51 COMPILER V9.60.7.0   MAIN                                                              04/25/2025 15:43:15 PAGE 2   
 
-  54   4                      mi_func();
-  55   4                      if (Int_Key_GetSw5Status() == 2) {
-  56   5                          break;
-  57   5                      }
-  58   4                  }
-  59   3              }
-  60   2              if (Int_Key_GetSw6Status() == 1) {
-  61   3                  while (1) {
-  62   4                      fa_func();
-  63   4                      if (Int_Key_GetSw6Status() == 2) {
-  64   5                          break;
-  65   5                      }
-  66   4                  }
-  67   3              }
-  68   2          }
-  69   1      }
-C51 COMPILER V9.60.7.0   MAIN                                                              04/23/2025 22:18:44 PAGE 3   
+  54   4                      if (Int_Key_GetSw5Status() == 2) {
+  55   5                          break;
+  56   5                      }
+  57   4                  }
+  58   3              }
+  59   2              if (Int_Key_GetSw6Status() == 1) {
+  60   3                  while (1) {
+  61   4                      fa_func();
+  62   4                      if (Int_Key_GetSw6Status() == 2) {
+  63   5                          break;
+  64   5                      }
+  65   4                  }
+  66   3              }
+  67   2          }
+  68   1      }
+C51 COMPILER V9.60.7.0   MAIN                                                              04/25/2025 15:43:15 PAGE 3   
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -144,59 +143,58 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 38
 000F 120000      E     LCALL   Int_Key_GetSw3Status
 0012 BF02F7            CJNE    R7,#02H,?C0008
-C51 COMPILER V9.60.7.0   MAIN                                                              04/23/2025 22:18:44 PAGE 4   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/25/2025 15:43:15 PAGE 4   
 
                                            ; SOURCE LINE # 39
                                            ; SOURCE LINE # 40
                                            ; SOURCE LINE # 41
                                            ; SOURCE LINE # 42
-                                           ; SOURCE LINE # 43
 0015         ?C0007:
-                                           ; SOURCE LINE # 44
+                                           ; SOURCE LINE # 43
 0015 120000      E     LCALL   Int_Key_GetSw4Status
 0018 BF0109            CJNE    R7,#01H,?C0011
 001B         ?C0012:
+                                           ; SOURCE LINE # 44
                                            ; SOURCE LINE # 45
-                                           ; SOURCE LINE # 46
 001B 120000      R     LCALL   re_func
-                                           ; SOURCE LINE # 47
+                                           ; SOURCE LINE # 46
 001E 120000      E     LCALL   Int_Key_GetSw4Status
 0021 BF02F7            CJNE    R7,#02H,?C0012
+                                           ; SOURCE LINE # 47
                                            ; SOURCE LINE # 48
                                            ; SOURCE LINE # 49
                                            ; SOURCE LINE # 50
-                                           ; SOURCE LINE # 51
 0024         ?C0011:
-                                           ; SOURCE LINE # 52
+                                           ; SOURCE LINE # 51
 0024 120000      E     LCALL   Int_Key_GetSw5Status
 0027 BF0109            CJNE    R7,#01H,?C0015
 002A         ?C0016:
+                                           ; SOURCE LINE # 52
                                            ; SOURCE LINE # 53
-                                           ; SOURCE LINE # 54
 002A 120000      R     LCALL   mi_func
-                                           ; SOURCE LINE # 55
+                                           ; SOURCE LINE # 54
 002D 120000      E     LCALL   Int_Key_GetSw5Status
 0030 BF02F7            CJNE    R7,#02H,?C0016
+                                           ; SOURCE LINE # 55
                                            ; SOURCE LINE # 56
                                            ; SOURCE LINE # 57
                                            ; SOURCE LINE # 58
-                                           ; SOURCE LINE # 59
 0033         ?C0015:
-                                           ; SOURCE LINE # 60
+                                           ; SOURCE LINE # 59
 0033 120000      E     LCALL   Int_Key_GetSw6Status
 0036 BF01CD            CJNE    R7,#01H,?C0005
 0039         ?C0020:
+                                           ; SOURCE LINE # 60
                                            ; SOURCE LINE # 61
-                                           ; SOURCE LINE # 62
 0039 120000      R     LCALL   fa_func
-                                           ; SOURCE LINE # 63
+                                           ; SOURCE LINE # 62
 003C 120000      E     LCALL   Int_Key_GetSw6Status
 003F BF02F7            CJNE    R7,#02H,?C0020
-                                           ; SOURCE LINE # 64
+                                           ; SOURCE LINE # 63
 0042 80C2              SJMP    ?C0005
              ; FUNCTION main (END)
 
-C51 COMPILER V9.60.7.0   MAIN                                                              04/23/2025 22:18:44 PAGE 5   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/25/2025 15:43:15 PAGE 5   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -259,7 +257,7 @@ SCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0098H  1
 P31. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B1H  1
 P22. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A2H  1
 P13. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0093H  1
-C51 COMPILER V9.60.7.0   MAIN                                                              04/23/2025 22:18:44 PAGE 6   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/25/2025 15:43:15 PAGE 6   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -322,7 +320,7 @@ IT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      008AH  1
 TH2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CDH  1
 P. . . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D0H  1
 SM0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009FH  1
-C51 COMPILER V9.60.7.0   MAIN                                                              04/23/2025 22:18:44 PAGE 7   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/25/2025 15:43:15 PAGE 7   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
