@@ -1,0 +1,2 @@
+.\build\Release\.obj\src\Dri\Dri_Uart.o,.\build\Release\.obj\src\main.o TO .\build\Release\P23_串口通信_轮询版
+PRINT(.\build\Release\P23_串口通信_轮询版.map) REMOVEUNUSED

@@ -1,0 +1,14 @@
+>>> cc
+
+
+
+>>> ld
+
+
+LX51 LINKER/LOCATER V4.66.100.0 - SN: K1DZC-J84JUC
+COPYRIGHT Copyright (C) 1995-2021, Arm Limited or its Affiliates. All rights reserved.
+@e:\嵌入式\projects\P23_串口通信_轮询版\build\Release\P23_串口通信_轮询版.lnp .\build\Release\.obj\src\Dri\Dri_Uart.o,.\build\Release\.obj\src\main.o TO .\build\Release\P23_串口通信_轮询版
+PRINT(.\build\Release\P23_串口通信_轮询版.map) REMOVEUNUSED
+
+Program Size: data=10.0 xdata=0 const=0 code=66
+LX51 RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
