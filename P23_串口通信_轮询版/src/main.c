@@ -10,8 +10,8 @@ void main()
             res = SBUF;
             RI  = 0;
             while (!TI) {};
-            SBUF = res;
-            TI   = 0;
+            TI = 0;
+            SBUF = res + 1;
         }
     }
 }

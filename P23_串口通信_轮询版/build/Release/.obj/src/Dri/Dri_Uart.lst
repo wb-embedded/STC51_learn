@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   DRI_UART                                                          04/27/2025 22:08:46 PAGE 1   
+C51 COMPILER V9.60.7.0   DRI_UART                                                          04/28/2025 19:52:29 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE DRI_UART
@@ -34,7 +34,7 @@ line level    source
   23   1          TH1 = TL1 = 0xFD;
   24   1          TR1       = 1;
   25   1      }
-C51 COMPILER V9.60.7.0   DRI_UART                                                          04/27/2025 22:08:46 PAGE 2   
+C51 COMPILER V9.60.7.0   DRI_UART                                                          04/28/2025 19:52:29 PAGE 2   
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -69,7 +69,7 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
 001D 22                RET     
              ; FUNCTION Dri_Uart_Init (END)
 
-C51 COMPILER V9.60.7.0   DRI_UART                                                          04/27/2025 22:08:46 PAGE 3   
+C51 COMPILER V9.60.7.0   DRI_UART                                                          04/28/2025 19:52:29 PAGE 3   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -132,7 +132,7 @@ P04. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0084H  1
 P40. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00E8H  1
 TMOD . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0089H  1
 TCON . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   0088H  1
-C51 COMPILER V9.60.7.0   DRI_UART                                                          04/27/2025 22:08:46 PAGE 4   
+C51 COMPILER V9.60.7.0   DRI_UART                                                          04/28/2025 19:52:29 PAGE 4   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -195,7 +195,7 @@ PT0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B9H  1
 PT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BBH  1
 RS0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00D3H  1
 ISP_CONTR. . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00E7H  1
-C51 COMPILER V9.60.7.0   DRI_UART                                                          04/27/2025 22:08:46 PAGE 5   
+C51 COMPILER V9.60.7.0   DRI_UART                                                          04/28/2025 19:52:29 PAGE 5   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====

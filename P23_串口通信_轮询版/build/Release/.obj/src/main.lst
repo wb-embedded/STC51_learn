@@ -1,4 +1,4 @@
-C51 COMPILER V9.60.7.0   MAIN                                                              04/27/2025 22:08:46 PAGE 1   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/28/2025 19:52:29 PAGE 1   
 
 
 C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
@@ -21,12 +21,12 @@ line level    source
   10   3                  res = SBUF;
   11   3                  RI  = 0;
   12   3                  while (!TI) {};
-  13   3                  SBUF = res;
-  14   3                  TI   = 0;
+  13   3                  TI = 0;
+  14   3                  SBUF = res + 1;
   15   3              }
   16   2          }
   17   1      }
-C51 COMPILER V9.60.7.0   MAIN                                                              04/27/2025 22:08:46 PAGE 2   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/28/2025 19:52:29 PAGE 2   
 
 ASSEMBLY LISTING OF GENERATED OBJECT CODE
 
@@ -48,15 +48,17 @@ ASSEMBLY LISTING OF GENERATED OBJECT CODE
                                            ; SOURCE LINE # 12
 000B 3099FD            JNB     TI,?C0004
                                            ; SOURCE LINE # 13
-000E 850099      R     MOV     SBUF,res
+000E C299              CLR     TI
                                            ; SOURCE LINE # 14
-0011 C299              CLR     TI
+0010 E500        R     MOV     A,res
+0012 04                INC     A
+0013 F599              MOV     SBUF,A
                                            ; SOURCE LINE # 15
                                            ; SOURCE LINE # 16
-0013 80EE              SJMP    ?C0001
+0015 80EC              SJMP    ?C0001
              ; FUNCTION main (END)
 
-C51 COMPILER V9.60.7.0   MAIN                                                              04/27/2025 22:08:46 PAGE 3   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/28/2025 19:52:29 PAGE 3   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -119,7 +121,7 @@ P22. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00A2H  1
 P13. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0093H  1
 P04. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      0084H  1
 P40. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00E8H  1
-C51 COMPILER V9.60.7.0   MAIN                                                              04/27/2025 22:08:46 PAGE 4   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/28/2025 19:52:29 PAGE 4   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -182,7 +184,7 @@ SM2. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      009DH  1
 TL2. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00CCH  1
 PT0. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00B9H  1
 PT1. . . . . . . . . . . . . . . . . .  ABSBIT   -----  BIT      00BBH  1
-C51 COMPILER V9.60.7.0   MAIN                                                              04/27/2025 22:08:46 PAGE 5   
+C51 COMPILER V9.60.7.0   MAIN                                                              04/28/2025 19:52:29 PAGE 5   
 
 NAME                                    CLASS   MSPACE  TYPE    OFFSET  SIZE
 ====                                    =====   ======  ====    ======  ====
@@ -217,7 +219,7 @@ PSW. . . . . . . . . . . . . . . . . .  SFR      DATA   U_CHAR   00D0H  1
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =     21    ----
+   CODE SIZE        =     23    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
