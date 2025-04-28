@@ -6,10 +6,9 @@ void main()
     unsigned char res;
     Dri_Uart_Init();
     while (1) {
-      res = Dri_Uart_Rdata();
-      if(res)
-      {
-        Dri_Uart_Tdata('a');
-      }
+        res = Dri_Uart_Rdata();
+        if (res) {
+            Dri_Uart_Tdata('a');
+        }
     }
 }
